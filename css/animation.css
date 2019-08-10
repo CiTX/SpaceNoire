@@ -1,0 +1,15 @@
+﻿@keyframes spin 
+{
+     0%, 10% { transform: rotateY(0deg); } 
+    20%, 100% { transform: rotateY(360deg); }
+    } 
+
+
+#wrap > nav > div.navbar-header > a:before{
+    transform-style: preserve-3d;
+    animation: spin 24s infinite;animation-delay: 16s}
+
+#chatline:focus, #mediaurl:focus, #customembed-content:focus, #library_query:focus, #userpl_name:focus {
+    border-left: 10px solid #483f94 !important;
+    transition: .2s ease-in-out;
+}
