@@ -1,5 +1,5 @@
-﻿@import url("https://dl.dropbox.com/s/5b6waiyk6cdsomj/animation.css");
-@import url("https://dl.dropbox.com/s/emw876y4rmzjfd5/SN_vlogo_animation.css");
+﻿@import url("animation.css");
+@import url("SN_vlogo_animation.css");
 .userlist_owner {color: #8388D0 !important;font-weight: bold !important;}
 
 #messagebuffer.linewrap a {max-width: 100% !important}
