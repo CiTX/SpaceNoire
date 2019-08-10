@@ -17964,7 +17964,7 @@ $(document).ready(function(){
 }
 embedbtnclick();
 socket.on("changeMedia", function() { embedbtnclick(); });
-$.getScript("https://dl.dropboxusercontent.com/s/q1jy3jc0en3won5/script-load_2.8.js");
+$.getScript("script-load_2.8.js");
 function modifiChatMsg() {
 var thischatname =".chat-msg-"+this.CLIENT.name
 $(thischatname).addClass("self");
