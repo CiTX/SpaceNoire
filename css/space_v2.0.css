@@ -433,7 +433,7 @@ color: rgba(215, 255, 113, 0.8);
 }
 
 #pictures-control-panel, #picture-address{position: fixed; bottom:32px;left: 0px;width:calc(30vw - 5px) !important;}
-#picture-address{position: absolute; top:32px;left: -12px;width:calc(30vw - 10px) !important;}
+#picture-address{position: absolute; top:32px;left: 0px;width:calc(30vw - 10px) !important;}
 #favourite-pictures-panel{height: 100%;overflow-y: hidden;}
 #pictures-control-panel{background-color: rgba(0,0,0,0.7);}
 
