@@ -1,5 +1,5 @@
 ﻿$(document).ready(function() { $('<link id="chanfavicon" href="https://dl.dropbox.com/s/fvkkshw73owv90b/moon.ico" type="image/x-icon" />').attr('rel', 'shortcut icon').appendTo("head"); });
-$.getScript("https://dl.dropboxusercontent.com/s/2oa8bn6d30sjjuk/radio.js");
+$.getScript("radio.js");
 
 
 /* Chat images */
