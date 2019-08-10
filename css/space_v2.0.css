@@ -489,26 +489,6 @@ div.upload {
     border: 1px solid rgba(0, 0, 0, 0.2) !important;
 }
 
-
-
-/* Video Logo */
-#ytapiplayer::after {
-    background: url(https://dl.dropbox.com/s/nds2zo8h5aqpmor/logo-3.png) no-repeat 0 0 !important;
-    background-size: contain !important;
-}
-#ytapiplayer::before{content: "" !important;top: 60px !important;}
-@keyframes vlogo{
-   0%, 100% { opacity: 0; transform: translate(0px,-1000px) rotate(0deg) ; content: "";  }
-   10%, 99% { opacity: 1;content: "SN";  }
-   11%, 97% { transform: translate(0px,10px) rotate(0deg) ; content: "SpaceN";  }
-      12%, 96% { transform: translate(0px,0px) rotate(0deg) ; content: "SpaceNoire";  }
-   50% { transform: translate(0px,0px) rotate(0deg) ; content: "SpaceNoire";  }
-      98% { transform: translate(0px,10px) rotate(0deg) ; content: "SN";  }
-}
-@-moz-document url-prefix(){#ytapiplayer::before{ content: "SpaceNoire" !important;}}
-@supports (-ms-ime-align:auto) {#ytapiplayer::before{ content: "SpaceNoire" !important;}}
-/*end*/
-
 #chatline:focus, #mediaurl:focus, #customembed-content:focus, #library_query:focus, #userpl_name:focus {
     border-left: 10px solid #483f94 !important;
     transition: .2s ease-in-out;
