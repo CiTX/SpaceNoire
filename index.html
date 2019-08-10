@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Анимач - главная</title>
-<link id="chanfavicon" href="https://dl.dropboxusercontent.com/s/ypmx9scwx0nrhmj/o_07039a057ff6c194-2.ico" type="image/x-icon" rel="shortcut icon">
+    <title>Space Noire</title>
+<link id="chanfavicon" href="https://dl.dropbox.com/s/fvkkshw73owv90b/moon.ico" type="image/x-icon" rel="shortcut icon">
 <meta name="viewport" content="width=device-width,user-scalable=no">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
@@ -15,147 +15,23 @@
 <div id="mainpage"style="margin-left: 30%;width: 40%;min-height: 100%;float: left; padding-left: 5px;padding-right: 5px">
     <div id="nav">
 <center>
-<font color="#836fc1" class="greeting" size="6">Добро пожаловать на наш сайт!</font> <br />
-
+<font color="#836fc1" class="greeting" size="6">Добро пожаловать!</font> <br />
+	<a href="http://synchtube.ru/r/SpaceNoire" target="_blank">Space Noire</a>
 </center>
-</div>
-		<div id="nav-buttons">
-			<div id="motd-tabs" style="text-align:center;">
-		  <a class="btn" href="faq.html" style="text-decoration: none">FAQ</a>
-		  <a class="btn" title="Предложите своё аниме для совместного просмотра" href="requests.html" style="text-decoration: none" >Реквесты</a>
-		  <a class="btn" href="raspisanie.html" style="text-decoration: none" >Расписание</a>
-	  		</div>
-		</div>
-        <div id="links" style="background: black; border: 1px solid;border-style: solid;border-color: #836fc1;padding-left: 5px;margin-top: 15px;margin-left: 10vw;margin-right: 10vw;">
-<center>
-<font color="#836fc1" size="5">Наши комнаты</font> <br />
-<a href="http://synchtube.ru/r/pururin" target="_blank"><font size="4">Пурурин</font></a><br />
-<a href="https://tv.2ch.hk/r/a" target="_blank"><font size="4">Два.ч</font></a><br />
-<a href="https://owlch.ru/r/a" target="_blank"><font size="4">Овла.ч</font></a><br />
-<a href="https://taverna.tv/r/pururin" target="_blank"><font size="4">Таверна.тв</font></a><br />
-<a href="https://cytu.be/r/pur" target="_blank"><font size="4">cytu.be</font></a><br />
-</center>
-</div>
-    <div id="news" style="padding-top: 10px; margin-bottom: 10px;text-align: left">
-<center>
-<img src="https://dl.dropbox.com/s/oem8wyhj7e42h4c/Akari_akaza_by_yukirumo990-d4ifcuc.png" height="200px"/></br>
-<font color="red" size="6">Что нового?</font>
-</center> <br />
-<span><span class="date">24.02.2019</span> - Мы переехали на тивач (tv.2ch.hk) (основной канал теперь там - <a href="https://tv.2ch.hk/r/a" target="_blank" style="color: #29bbff;"><font size="4">https://tv.2ch.hk/r/a/</font></a>) <br /></span>
-<span><span class="date">23.05.2019</span> - Обновлён список смайлов, удалено много неиспользуемых. <a href="https://www.dropbox.com/s/pqqme0uc8ebqmm1/emotelist_23.05.19.txt?raw=1" target="_blank" style="color: #29bbff;"><font size="4">ссылка на бекап</font></a> <br /></span>
-<span><span class="date">23.05.2019</span> - Добавлена новая панель смайлов (мало кому это будет интересно). Суть её в том что она обновляет список доступных смайлов без обновления страницы (очень полезна при удалении смайлов). <br /></span>
-<span><span class="date">23.05.2019</span> - Создан небольшой сайт на Github Pages для размещения информации и доступен по редиректу <a href="http://animach.tk" style="color: #29bbff;"><font size="4">http://animach.tk/</font></a> <br /></span>
-<span><span class="date">25.05.2019</span> - Сайт оптимизирован под мобильные экраны.  <br /></span>
-<span><span class="date">29.05.2019</span> - Штаб перенесён на Пурурин (аниме по-прежнему собираемся смотреть на тиваче). Добавлена кнопка с окном, открывающим нашу комнату Пурурин прямо на главной странице здесь (во фрейме). Наконец настроен домен animach.tk и теперь полностью функционирует.<br /></span>
-<span><span class="date">30.05.2019</span> - На сайт добавлен тестовый чат для сообщений.<br /></span>
-	
-<div>
-    <div class="search-line" id="yohoho">
-        <div class="form">
-            <input type="text" placeholder="Название фильма / ID КиноПоиск" id="search-title" name="title" style="width: 250px">
-            <input type="button" id="search" value="Найти">
-        </div>
-    </div>
-</div>
-<script src="https://citx.github.io/yo.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var seo = document.querySelector('.index-seo').innerText;
-        var items = seo.split(' ');
-        (function countMovies() {
-            var date = new Date();
-            var year = date.getUTCFullYear();
-            var month = date.getUTCMonth() + 1;
-            var day = date.getUTCDate();
-            var hours = date.getUTCHours();
-            var minutes = date.getUTCMinutes();
-            var seconds = date.getUTCSeconds();
-            var total = ((year - 2014) * 121680) + (month * 10140) + (day * 338) + (hours * 14) + minutes + seconds;
-            document.querySelector('#count').innerHTML = (total + '').replace(/([0-9]{3})([0-9]{3})/, '$1 $2');
-            setInterval(function () {
-                total += Math.floor(Math.random() * 3);
-                document.querySelector('#count').innerHTML = (total + '').replace(/([0-9]{3})([0-9]{3})/, '$1 $2');
-            }, 1000);
-        })();
-        var search = document.querySelector('#search');
-        var title = document.querySelector('#search-title');
-        if (window.location.hash) {
-            var hash = window.location.hash.substring(1);
-            if (title && hash) {
-                title.value = hash;
-                parse();
-            }
-        }
-        if (search) {
-            search.addEventListener('click', function () {
-                return parse();
-            });
-        }
-        if (title) {
-            title.addEventListener('keyup', function (event) {
-                event.preventDefault();
-                if (event.keyCode === 13) {
-                    return parse();
-                }
-            });
-        }
-        function parse() {
-            var yohoho = document.querySelector('#yohoho');
-            if (title && title.value && yohoho) {
-                if (/kinopoisk\.ru/i.test(title.value)) {
-                    var exec = /(film\/|movie\/).*?([0-9]{3,7})\//gi.exec(title.value);
-                    if (exec && exec[2]) {
-                        yohoho.dataset.kinopoisk = exec[2];
-                        window.location.hash = '#' + yohoho.dataset.kinopoisk;
-                    }
-                } else if (/^\d+$/.test(title.value)) {
-                    yohoho.dataset.kinopoisk = title.value;
-                    window.location.hash = '#' + title.value;
-                } else {
-                    yohoho.dataset.title = title.value;
-                    window.location.hash = '#' + title.value;
-                }
-                items = [];
-                return yo();
-            }
-        }
-    });
-</script>
 
-
-</div>
 </div>
 
 <div id="leftpanel" style="position: fixed;margin-right: 70%;width: 30%;float: left;min-height: 100%;">
 <div id="radiobells_container"><a href="https://www.radiobells.com/" rel="nofollow" id="RP_link">www.radiobells.com</a> #radiobells_script_hash</div>
 <script type="text/javascript" src="https://dl.dropbox.com/s/vu8ws89d8vvfsg8/radio.js"></script>
-<!--<script>
-messowl = $('<span><font color="red"> (открыт в окне)</font></span>');
-afbtn = $('<span id="af-btn" title="Открыть канал в окне" style="position:fixed;right:71vw;bottom: 0px; z-index: 1" class="btn btn-sm btn-default"><img src="https://dl.dropbox.com/s/ypmx9scwx0nrhmj/o_07039a057ff6c194-2.ico"/></span>').appendTo("#news").on("click", function() {
-if (!$(this).hasClass('btn-success')) {
-$(this).addClass('btn-success').html('<img title="Закрыть канал в окне" src="https://dl.dropbox.com/s/ypmx9scwx0nrhmj/o_07039a057ff6c194-2.ico"/>');
-messowl.appendTo('#links > center > a:nth-child(3) > font'); $('#chat').hide();$('<div id="aframe"><iframe src="http://synchtube.ru/r/pururin" width="100%" frameborder="0" ></iframe>').appendTo("#leftpanel");
-} else {
-$(this).removeClass('btn-success').html('<img title="Открыть канал в окне" href="requests.html" src="https://dl.dropbox.com/s/ypmx9scwx0nrhmj/o_07039a057ff6c194-2.ico"/>');
-messowl.remove(); $('#aframe').remove();$('#chat').show();}
-  });  
-</script>-->
-	<iframe src="https://araeostyle-nods.000webhostapp.com/chat/index.html" id="chat" width="100%" style="height: calc(100vh - 50px); overflow-y: none; max-height: 100%" frameborder="0" ></iframe>
+
     </div>
 
 <div id="right-panel" style="position: fixed;margin-left: 70%; width: 30vw;float: left;overflow-y: auto">
-<!-- VK Widget -->
-        <div id="vk_groups"></div>
-<script type="text/javascript">
-VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, width: "inherit", height: "560", color1: '000000', color2: 'FFFFFF', color3: '1D84D9'}, 107685829);
-</script>
-</div>
 
 </div>
 
-<script type="text/javascript" src="https://dl.dropboxusercontent.com/s/b7u815m3e07w35b/clock.js"></script>
+</div>
 
 
 </body>
