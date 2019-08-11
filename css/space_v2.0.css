@@ -165,7 +165,7 @@ html {
 #modal-picture-options-wrapper, #pictures-trash {
     position: relative;
 }
-.chat-picture {cursor: -webkit-zoom-in;max-width: 220px}
+.chat-picture {cursor: -webkit-zoom-in;max-width: 200px}
 #image_preview{max-height: 300px}
 #modal-picture img{width:auto;height:50%}
 #modal-picture{left:100%;top:90%;z-index:100000000}
@@ -290,9 +290,7 @@ overflow-y: scroll;
 #plcount{padding-left: 5px;}
 #pllength{padding-right: 5px;}
 #main {background-color: rgba(0,0,0,0) !important;}
-.chat-picture {
-    max-width: -webkit-fill-available !important;
-}
+
 /*****/
 
 body{background: url(https://dl.dropbox.com/s/4i9566rjnu8fzs7/1.jpg) repeat; /*background-size:cover;*/background-attachment: fixed;background-color: black}
@@ -472,10 +470,6 @@ div.upload input {
 #imgupload > .modal-dialog > .modal-content {
     width: 600px;
     margin: 0px auto;
-}
-
-.chat-picture {
-    max-width: -webkit-fill-available !important;
 }
 
 div.upload {
