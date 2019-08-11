@@ -2,7 +2,7 @@ AddModeBtn = $('<span id="add-mode-btn" class="btn btn-sm btn-default" title="О
 if (!$(this).hasClass('btn-success')) {
 $(this).addClass('btn-success').html('<span title="Закрыть форму">Закрыть</span>');
 $(`
-<form id="prompt-form" style="background-color: rgba(0,0,0,0.5)">
+<form id="prompt-form" style="background-color: rgba(0,0,0,0.5);padding: 15px">
   <div id="prompt-message"></div>
       <p><input name="link_1" id="link_1" placeholder="Ссылка 1" type="text" class="form-control"></br></p>
       <p><input name="title" type="text"  placeholder="Название" class="form-control"></br></p>
