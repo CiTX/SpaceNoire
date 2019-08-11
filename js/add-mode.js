@@ -10,7 +10,7 @@ $(`
       <p><input name="serieend" placeholder="Номер конечной серии" type="text" class="form-control"></br></p>
       <p><input type="submit" value="ОК" class="btn btn-sm btn-default">
       <input type="button" name="cancel" value="Отмена" class="btn btn-sm btn-default"></p>
-      </form>`).appendTo('#leftpane');showPrompt("Форма для добавления аниме:",function(args){
+      </form>`).appendTo('#leftpane');showPrompt("<center><strong><font color="red">Форма для добавления аниме:</font></strong></center>",function(args){
     let len = args.length;
     alert("Ссылка: "+args.slice(0,len-3)+" Название: "+args[len-3]+" Начало: "+args[len-2]+" Конец: "+args[len-1]);
 });
