@@ -188,3 +188,16 @@ window.cytubeEnhanced.addModule('AMHelpBtn', function (app, settings) {
 /***END***/
 
 
+function updateAddMode() {
+if (CLIENT.rank >= 1) {
+$('#add-mode-btn').show();
+$('#help-addmode-btn').show();
+};
+if (CLIENT.rank < 1) {
+$('#add-mode-btn').hide();
+$('#help-addmode-btn').hide();
+};
+}
+updateAddMode();
+socket.on("rank", function() { updateAddMode(); });
+socket.on("login", function() { updateAddMode(); });
