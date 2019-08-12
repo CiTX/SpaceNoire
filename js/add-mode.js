@@ -1,6 +1,7 @@
-AddModeBtn = $('<span id="add-mode-btn" class="btn btn-sm btn-default" title="Открыть форму для добавления">Добавить</span>').appendTo("#leftcontrols").on("click", function() {
+AddModeBtn = $('<span id="add-mode-btn" class="btn btn-sm btn-default" title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>').insertAfter("#showmediaurl").on("click", function() {
 if (!$(this).hasClass('btn-success')) {
-$(this).addClass('btn-success').html('<span title="Закрыть форму">Закрыть</span>');
+$(this).addClass('btn-success').html('<span title="Закрыть форму"><i class="glyphicon glyphicon-minus-sign"></span>');
+let informprompt = "<center><strong><font color='red'>Форма для добавления сериалов:</font></strong></center>";
 $(`
 <form id="prompt-form" style="background-color: rgba(0,0,0,0.5);padding: 15px">
   <div id="prompt-message"></div>
@@ -10,7 +11,7 @@ $(`
       <p><input name="serieend" placeholder="Номер конечной серии" type="text" class="form-control"></br></p>
       <p><input type="submit" value="ОК" class="btn btn-sm btn-default">
       <input type="button" name="cancel" value="Отмена" id="cancelpromptbtn" class="btn btn-sm btn-default"></p>
-      </form>`).appendTo('#leftpane');showPrompt("Форма для добавления сериалов:",function(args){
+      </form>`).appendTo('#leftpane');showPrompt(informprompt,function(args){
     let len = args.length;
     alert("Ссылка: "+args.slice(0,len-3)+" Название: "+args[len-3]+" Начало: "+args[len-2]+" Конец: "+args[len-1]);
 });
@@ -146,7 +147,12 @@ var onchFunc = function() {
 link_1.num = 1;
 link_1.onchange = onchFunc;   
 
-/***AddModeHelpBtn***/
+} else {
+$(this).removeClass('btn-success').html('<span title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>');
+$('#prompt-form').remove();}
+  });
+  
+  /***AddModeHelpBtn***/
 	
 window.cytubeEnhanced.addModule('AMHelpBtn', function (app, settings) {
 	    'use strict';
@@ -159,13 +165,13 @@ window.cytubeEnhanced.addModule('AMHelpBtn', function (app, settings) {
 	        <p>Как это работает:
 	        <ul>
 	        <li><strong>Скопируйте ссылку в строку с надписью "Ссылка 1"</strong>, ниже появится новая строка с надписью "Ссылка 2". Добавьте вторую ссылку на следующую серию сериала во вторую строку "Ссылка 2". Продолжайте выполнять данные действия для добавления ссылок 3, 4, 5 серий и т.д.</li>
-	        <li><strong>Впишите в строку "Название" собственно само название сериала. <font color="red">Если вы добавляете, например, второй сезон сериала, то в данную строку, соответственно, после названия необходимо добавить дополнительные слова через пробел - "2 сезон".</font></strong></br><font color="#00ef1f">Например: "Доктор кто 2 сезон" - введённое в строку "Название".</font></li>
+	        <li><strong>Впишите в строку "Название" собственно само название сериала. <font color="red">Если вы добавляете, например, второй сезон сериала, то в данную строку, соответственно, после названия необходимо добавить дополнительные слова через пробел - "2 сезон".</font></strong></br><font color="#00ef1f">Например: "Доктор Кто 2 сезон" - введённое в строку "Название".</font></li>
 	        <li><strong>Введите в строку "Номер начальной серии"</strong> номер первой серии с которой вы начинаете добавление.</li>
 	        <li><strong>Введите в строку "Номер конечной серии"</strong> номер последней серии на которой вы останавливаете добавление.</li>
 	        <li><strong>Важно, <font color="red">чтобы количество ссылок совпадало с указанным диапазоном начальной и конечной серий, иначе возможно неправильное наименование серий.</font></strong></li>
-	        <li><strong>Нажмите кнопку "ок"</strong> и в конец плейлиста добавятся введённые вами ссылки на серии и им автоматически присвоится имя, указанное в строке "Название", а также номер серии, указанный с начальной по конечную серии в соответствующих строках.</br> 
+	        <li><strong>Нажмите кнопку "ок"</strong> и в конец плейлиста добавятся введённые вами ссылки на серии и им автоматически присвоится имя, указанное в строке "название", а также номер серии, указанный с начальной по конечную серии в соответствующих строках.</br> 
 	        <font color="red">Шаблон имени -</font> "Название" + "номер серии" + "серия".</br> 
-	        <font color="#00ef1f">Например: Доктор кто 2 сезон 5 серия.</font> </li>
+	        <font color="#00ef1f">Например: Доктор Кто 2 сезон 5 серия.</font> </li>
 	        </ul>
 	        </p>`);
 
@@ -173,17 +179,12 @@ window.cytubeEnhanced.addModule('AMHelpBtn', function (app, settings) {
 	    };
 	    this.$AddModeHelpBtn = $('<button id="help-addmode-btn" class="btn btn-sm btn-default" title="Инструкция по добавлению сериалов"><i class="glyphicon glyphicon-question-sign">')
 	        .text(app.t(''))
-	        .insertAfter('#cancelpromptbtn')
+	        .insertAfter('#add-mode-btn')
 	        .on('click', function () {
 	            that.handleAddVideoBtn(that.commands);
 	        });
 	});
 
 /***END***/
-
-} else {
-$(this).removeClass('btn-success').html('<span title="Открыть форму для добавления">Добавить</span>');
-$('#prompt-form').remove();}
-  });
 
 
