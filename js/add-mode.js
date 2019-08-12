@@ -1,8 +1,6 @@
 AddModeBtn = $('<span id="add-mode-btn" class="btn btn-sm btn-default" title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>').insertAfter("#showmediaurl").on("click", function() {
 if (!$(this).hasClass('btn-success')) {
 $(this).addClass('btn-success').html('<span title="Закрыть форму"><i class="glyphicon glyphicon-minus-sign"></span>');
-$('#sr-form').removeClass('btn-success');
-$('#sr-form').remove();
 let informprompt = "<center><strong><font color='red'>Форма для добавления сериалов:</font></strong></center>";
 $(`
 <form id="prompt-form" style="background-color: rgba(0,0,0,0.5);padding: 15px">
@@ -151,8 +149,6 @@ link_1.onchange = onchFunc;
 
 } else {
 $(this).removeClass('btn-success').html('<span title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>');
-$('#sr-form').removeClass('btn-success');
-$('#sr-form').remove();
 $('#prompt-form').remove();}
   });
   
