@@ -1,0 +1,20 @@
+/*allow script message style*/
+#chanjs-allow-prompt > a, #chanjs-allow-prompt > button {display: none}
+#chanjs-allow-prompt > span, #chanjs-allow-prompt > div.checkbox > label {font-size: 0px}
+#chanjs-allow-prompt > span:after {content: 'Чтобы использовать все возможности канала подтвердите действие';font-size: 14px !important}
+#chanjs-allow-prompt > div.checkbox > label:after {content: 'запомнить выбор';font-size: 14px !important}
+#chatwrap > div.profile-box{position: fixed !important; left: 115px !important; z-index: 10 !important;top: calc(100vh - 165px) !important;border-radius: 25px;}
+#chatwrap > div.profile-box:after {content: '';z-index: -1 !important;position: fixed;width: 130px;height: 140px;left: 0px!important;bottom: -5px;background-size: contain;background-color: rgba(0, 0, 0,0.0)!important;background-image: url(https://citx.github.io/SpaceNoire/chanjs/allow-profile-box-background.png);background-repeat: no-repeat;}
+#chanjs-allow{font-size: 0px;background-image: linear-gradient(#51a951,#217934 60%,#35ab4e);;margin-bottom: 5px;border-radius: 15px;}
+#chanjs-allow:before{font-size: 14px !important;content: 'все возможности';}
+#chanjs-deny{font-size: 0px;border-radius: 15px;}
+#chanjs-deny:before{font-size: 14px !important;content: 'только стандартные';}
+#chanjs-deny:hover:after{font-size: 10px !important;content: ""; color: black; padding-left: 140px !important;z-index: -1 !important;position: fixed;left:0px;height: 154px;bottom: 80px;background-size: contain;background-repeat: no-repeat;background-color: rgba(0, 0, 0,0.0)!important;background-image: url('https://citx.github.io/SpaceNoire/chanjs/chanjs-deny.png') !important;}
+#chanjs-allow:hover:after{font-size: 10px !important;content: ""; color: black; padding-left: 130px !important;z-index: -1 !important;position: fixed;left:0px;height: 154px;bottom: 70px;background-size: contain;background-repeat: no-repeat;background-color: rgba(0, 0, 0,0.0)!important;background-image: url('https://citx.github.io/SpaceNoire/chanjs/chanjs-allow.png') !important;}
+#chanjs-allow-prompt > div.checkbox:hover:after{content: "";padding-left: 120px !important;z-index: -1 !important;position: fixed;left:0px;width: 174px;height: 134px;bottom: 120px;background-size: contain;background-repeat: no-repeat;background-color: rgba(0, 0, 0,0.0)!important;background-image: url('https://citx.github.io/SpaceNoire/chanjs/checkbox.png') !important;}
+#chanjs-allow:hover {background-image: linear-gradient(#296329,#1a6129 60%,#000000);}
+@media (max-width: 992px){#chatwrap > div.profile-box {left: calc(100vw - 205px) !important;top: calc(100vh - 220px) !important;}
+.profile-box {background: black !important;}
+#chanjs-deny:hover:after, #chanjs-allow:hover:after, #chanjs-allow-prompt > div.checkbox:hover:after{display: none}
+}}
+/*allow script message style END*/
