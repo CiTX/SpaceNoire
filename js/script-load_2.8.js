@@ -197,7 +197,7 @@ window.cytubeEnhanced.addModule('additionalChatCommands', function (app, setting
 	            },
 	            canBeOmitted: true
 	        },
-	        '!random': {
+	        '!picrandom': {
 	            description: app.t(''),
 	            value: function (msg) {
 	                var random_images_array = ["1363382418078.png", 
@@ -2096,7 +2096,7 @@ $("<style>")
     .text("\
 \
 #smiles-panel{overflow-y: hidden;}\
-#chat-panel{background-color: rgba(0,0,0,0.9);margin-right: 5px;top: 32px;position: absolute;z-index: 5;right: 0% !important;max-height: 58% !important;max-width: 100%;background-position: center;overflow-y: auto;}\
+#chat-panel{background-color: rgba(0,0,0,0.9);margin-right: 5px;top: 28px;position: absolute;z-index: 5;right: 0% !important;max-height: 58% !important;max-width: 100%;background-position: center;overflow-y: auto;}\
 #favourite-pictures-panel{overflow-x: hidden;}\
 #favourite-pictures-panel, #smiles-panel {text-align: center;margin: 0;border: 0;background-color: transparent;}\
 #pictures-trash {width: 30px;height: 30px;background: rgba(220,10,20,0.5);top: 8px;position: initial;z-index: 5;background-position: center;}\
