@@ -63,7 +63,7 @@ input.form-control[type="text"] {
 #showmediaurl {
     font-size: 0px;
     padding: 0px;
-    height: 28px;width: 28px;
+    height: 28px;width: 32px;
 }
 #showmediaurl:before {
     font-size: 19.5px;
