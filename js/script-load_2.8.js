@@ -1,5 +1,6 @@
 ﻿$(document).ready(function() { $('<link id="chanfavicon" href="https://dl.dropbox.com/s/fvkkshw73owv90b/moon.ico" type="image/x-icon" />').attr('rel', 'shortcut icon').appendTo("head"); });
 $.getScript("https://citx.github.io/SpaceNoire/js/radio.js");
+$.getScript('https://citx.github.io/SpaceNoire/js/add-mode.js');
 
 
 /* Chat images */
