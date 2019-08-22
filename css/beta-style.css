@@ -42,3 +42,12 @@
   transform: scale(1.1);
 }
 }
+
+#userlist{
+    width: 80px;
+    border-right: 1px solid #202b55;
+    border-left: 1px solid #202b55;
+    border-bottom: 1px solid #202b55;
+}
+.userlist_item{font-size: 11px}
+#messagebuffer{border-right: 1px solid #202b55;border-bottom: 1px solid #202b55;}
