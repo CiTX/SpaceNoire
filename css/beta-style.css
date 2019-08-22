@@ -1,0 +1,44 @@
+﻿@media (min-width: 992px){
+.label-default:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .btn:hover,.btn-default:hover {
+    background-image: linear-gradient(#28a6dc,#269bcd 60%,#28a6dc) !important;
+}
+.videolist {
+  list-style: none;
+  margin: 0 auto;
+  counter-reset: li;
+}
+.videolist li {
+  border-bottom: dashed 1px #006699;
+  margin-top: 1px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  padding: 5px;
+}
+.videolist a {
+  text-decoration: none;
+  padding-right: 0px;
+  display: block;
+  line-height: 30px;
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+}
+.videolist a:before {
+  display: inline-block;
+  content: counter(li);
+  counter-increment: li;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border: solid 1px #dedede;
+  margin-right: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 22px;
+  -webkit-transition: .4s linear;
+  transition: .4s linear;
+}
+.videolist a:hover:before {
+  color:#28a6dc;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+}
