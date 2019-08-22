@@ -51,3 +51,4 @@
 }
 .userlist_item{font-size: 11px}
 #messagebuffer{border-right: 1px solid #202b55;border-bottom: 1px solid #202b55;}
+.userlist_afk, .userlist_afk span.userlist_op, .userlist_afk span.userlist_owner{color: #696464 !important;text-decoration: line-through}
