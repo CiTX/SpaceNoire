@@ -1,3 +1,22 @@
+#messagebuffer.linewrap a {max-width: 100% !important}
+#messagebuffer a,#motdwrap a,footer a{color:#fff;text-decoration:none;position:relative;left:0;top:0;display:inline-block}#messagebuffer a:hover,#motdwrap a:hover,footer a:hover{color:#836fc1;text-decoration:none}#messagebuffer a:before,#motdwrap a:before,footer a:before{position:absolute;bottom:0;left:0;display:block;width:100%;height:1px;max-width:0;content:"";background-color:#836fc1;transition:max-width 150ms linear}#messagebuffer a:hover:before,#motdwrap a:hover:before,footer a:hover:before{max-width:100%}#chatline-inner{position:relative}:focus{outline:0!important;box-shadow:none!important}footer{min-height:30px;opacity:.5;transition:.1s;background-color:#836fc1!important}footer:hover{opacity:1}p{margin:0}
+
+.shout, .poll-notify {font-size: 110%; color: skyblue;} /* размер шрифта в /say */
+.timestamp.shout {font-size: 8pt; color: inherit; font-weight: 400;}
+h1,h3 {margin: 0; padding: 0; font: normal 24px 'Exo 2';} /* заголовки */ 
+
+#messagebuffer {overflow: auto; border-left: 1px dotted rgba(0, 60, 100, .5);}
+.modal {
+    background: rgba(0, 11, 33, 0.8);
+}
+.server-msg-reconnect {
+    background-color: #62c462 !important;
+    color: black !important;
+}
+.nick-hover {
+    background-color: #ffffff38;
+}
+
 .modal-body, .modal-content {
     background: rgba(0,0,0,0.7);
 }
