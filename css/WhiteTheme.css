@@ -1,0 +1,144 @@
+﻿.queue_entry[title]:after, a:focus, a:hover, .navbar-inverse .navbar-link:hover, .dropdown-menu>li>a, input.form-control[type="text"], input.form-control[type="password"], input.form-control[type="email"], textarea.form-control, .label, .profile-box, .user-dropdown, .emotelist-table td, .btn-default, body{color: black !important;}
+.queue_active .qe_title {color: white !important;}
+.queue_entry[title]:after{padding-left: 3px;}
+.btn-default {
+    color: #efefef;
+    background: none repeat scroll 0 0 rgb(255, 255, 255) !important;
+    border: 1px solid black !important;
+}
+.btn {
+    text-shadow: none;
+}
+#plmeta, #chat-panel, #titlerow-outer, #messagebuffer, #nav-collapsible, #userlist, #chatheader, #mediainfo, #channeloptions > div.modal-dialog > div, .dropdown-menu, #emotelist > div.modal-dialog.modal-dialog-nonfluid > div, #wrap, #emotelist > div.modal-dialog.modal-dialog-nonfluid > div > div.modal-body > table > tbody {
+    background-color: rgb(255, 255, 255) !important;}
+    #chatheader, #currenttitle {
+    background: linear-gradient(to bottom,rgb(255, 255, 255),rgba(82, 175, 255, 0.55))!important;
+   
+    }
+#chat-panel{background-image: url(http://anivisual.net/img/pat1.png); }
+
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+    color: #000;}
+#chatline {
+    background: rgba(220, 213, 213, 0.6) !important;
+}
+
+input.form-control[type="text"], .profile-box, .user-dropdown, .emotelist-table td, .dropdown-menu, .profile-box, .videolist .queue_entry {
+    background: rgb(255, 255, 255);
+}
+a {
+    color: #000;
+}
+.queue_active a:before, .queue_active {
+    color: white;
+    background: linear-gradient(to bottom,rgb(33, 150, 242),rgba(255, 255, 255, 0.67))!important;
+}
+
+.modal-content {
+    background-color: rgb(255, 255, 255) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+.modal-body, .modal-content {
+    background: rgba(215, 239, 245, 0.85);
+}
+input.form-control[type="text"], input.form-control[type="password"], input.form-control[type="email"], textarea.form-control {
+    background-color: rgb(13, 15, 15, 0.6) !important;
+}
+.navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
+    color: #000;
+}
+.navbar-inverse, #nav-collapsible {background-color: linear-gradient(white, #5bc0de 60%, white) !important;    background: none;
+}
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+    background-color: rgba(25, 0, 51, 0.7);
+    height: 50px;
+}
+.navbar-inverse, #nav-collapsible {
+    background-image: linear-gradient(#93bce3, #ffffff 47%, rgb(181, 209, 236)) !important;
+}
+#wrap {
+/*    background: none;*/
+}
+
+#chatheader, #chatline, #currenttitle, #plmeta, #messagebuffer, .btn, .form-control, .modal-content, .navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover, .navbar-inverse .navbar-nav li a:focus, .navbar-inverse .navbar-nav li a:hover, .profile-box, .queue_entry, .user-dropdown, .well{border: 1px solid black !important;}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(74, 136, 185);
+    border: 0 #fff;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track:hover {
+    background: #ffffff;
+    border: 0 #000;
+}
+
+input.form-control[type="text"], input.form-control[type="password"], input.form-control[type="email"], textarea.form-control {
+    background-color: rgba(212, 212, 212, 0.6) !important;
+}
+
+.navbar-inverse .navbar-link {
+    color: #000;
+}
+
+#showmediaurl {height: 30px;}
+
+.label-default:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .btn:hover,.btn-default:hover {
+    background-image: linear-gradient(#28a6dc,#28a6dc) !important;color: white !important;
+}
+.btn-success:hover,.btn-success {
+    background-image: linear-gradient(#5bc0de,#5bc0de 40%,#131c34) !important;
+}
+#userlist{font-size:11px;width: 70px;}
+.self .timestamp {
+	font-family: Arial;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-shadow: 
+		-0   -1px 0   #000000,
+		 0   -1px 0   #000000,
+		-0    1px 0   #000000,
+		 0    1px 0   #000000,
+		-1px -0   0   #000000,
+		 1px -0   0   #000000,
+		-1px  0   0   #000000,
+		 1px  0   0   #000000,
+		-1px -1px 0   #000000,
+		 1px -1px 0   #000000,
+		-1px  1px 0   #000000,
+		 1px  1px 0   #000000,
+		-1px -1px 0   #000000,
+		 1px -1px 0   #000000,
+		-1px  1px 0   #000000,
+		 1px  1px 0   #000000;
+}
+
+.self {
+    border: 1px solid black;padding:3px;
+}
+.self .username,  .userlist_item .userlist_owner {
+    color: #f00 !important;}
+.cirno{color: #28a6dc !important;}
+    
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: #62c462;
+    color: white !important;
+}
+button:disabled{color: white !important;background-color: black !important;}
+
+.queue_active a:before, .queue_active {
+    color: white;
+    background: linear-gradient(to bottom,rgb(19, 66, 103),rgb(19, 66, 103),#50b4d2)!important;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: white !important;
+}
+.text-muted, .text-primary {
+    color: #000000;
+}
+.nick-highlight, .nick-hover {
+    background-color: rgb(49, 49, 49) !important;
+}
+.nick-highlight{
+    padding-left: 3px;
+    padding-right: 3px;
+}
