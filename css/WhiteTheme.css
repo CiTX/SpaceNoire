@@ -142,3 +142,59 @@ button:disabled{color: white !important;background-color: black !important;}
     padding-left: 3px;
     padding-right: 3px;
 }
+
+/*******    update v1.1     *******/
+
+.navbar-inverse, #nav-collapsible {
+    background: linear-gradient(to bottom,#cae9f9,#cae8f7)!important;
+}
+.panel-primary>.panel-heading, #chatheader, #currenttitle {
+    background: linear-gradient(to bottom,#4a88b9,#5bc0de)!important;
+}
+#modflair.label-success, #afk-btn.label-success {
+    background: #ffffff !important;
+    color: black !important;
+    border: 1px solid black;
+    text-shadow: none !important;
+}
+.video-js .vjs-control-bar {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+.video-js .vjs-play-progress {
+    background-color: #4a88b9;
+}
+.video-js {
+    color: #000;
+}
+#videowrap{border: 1px solid black;}
+.motd-tab-content{
+    background-color: transparent;}
+.label, #userlisttoggle, #usercount{color: white !important; text-shadow: 1px 0px #091018, 1px 1px #091018;}
+
+.modal .close {
+    font-size: 3em;
+    color: rgb(0, 0, 0);
+    opacity: 1;
+}
+
+.pm-panel>.panel-heading {
+    background-color: rgb(255, 255, 255);
+    font-color: white;
+}
+
+.panel-default>.panel-heading {
+    color: #000000;
+    border-color: rgba(0,0,0,1);
+}
+.pm-buffer {
+    background-color: rgb(255, 255, 255);
+}
+.panel.pm-panel.panel-default {
+    color: #000000;}
+.close:focus, .close:hover {
+    color: #ff0909;}
+.close.pull-right {
+    color: black;
+    opacity: 1;
+}
