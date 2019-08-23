@@ -198,3 +198,19 @@ button:disabled{color: white !important;background-color: black !important;}
     color: black;
     opacity: 1;
 }
+
+/*******    update v1.2     *******/
+
+.navbar-header,#motd, #doc_time{	text-shadow: 
+		-1px -1px 0   #000000,
+		 1px -1px 0   #000000,
+		-1px  1px 0   #000000,
+		 1px  1px 0   #000000;}
+.navbar-header {
+    background-color: #cae9f8;
+}
+.navbar-header a:hover{color: white !important;}
+
+#videowrap-header {
+    background-color: rgb(255, 255, 255) !important;
+}
