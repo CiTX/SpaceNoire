@@ -1,17 +1,17 @@
 AddModeBtn = $('<span id="add-mode-btn" class="btn btn-sm btn-default" title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>').insertAfter("#showmediaurl").on("click", function() {
 if (!$(this).hasClass('btn-success')) {
 $(this).addClass('btn-success').html('<span title="Закрыть форму"><i class="glyphicon glyphicon-minus-sign"></span>');
-let informprompt = "<center><strong><font color='red'>Форма для добавления сериалов:</font></strong></center>";
+let infohead = "<center><strong><font color='red'>Форма для добавления сериалов:</font></strong></center>";
 $(`
-<form id="prompt-form" style="background-color: rgba(0,0,0,0.5);padding: 15px">
-  <div id="prompt-message"></div>
+<form id="add-mode-form" style="background-color: rgba(0,0,0,0.7);padding: 15px">
+  <div id="am-wrap"></div>
       <p><input name="link_1" id="link_1" placeholder="Ссылка 1" type="text" class="form-control"></br></p>
       <p><input name="title" type="text"  placeholder="Название" class="form-control"></br></p>
       <p><input name="seriebegin" placeholder="Номер начальной серии" type="text" class="form-control"></br></p>
       <p><input name="serieend" placeholder="Номер конечной серии" type="text" class="form-control"></br></p>
       <p><input type="submit" value="ОК" class="btn btn-sm btn-default">
       <input type="button" name="cancel" value="Отмена" id="cancelpromptbtn" class="btn btn-sm btn-default"></p>
-      </form>`).appendTo('#leftpane');showPrompt(informprompt,function(args){
+      </form>`).appendTo('#leftpane');showPrompt(infohead,function(args){
     let len = args.length;
     alert("Ссылка: "+args.slice(0,len-3)+" Название: "+args[len-3]+" Начало: "+args[len-2]+" Конец: "+args[len-1]);
 });
@@ -19,8 +19,8 @@ $(`
 var count = 1;
  
 function showPrompt(text,callback) {
-  let form = document.getElementById('prompt-form');
-  document.getElementById('prompt-message').innerHTML = text;
+  let form = document.getElementById('add-mode-form');
+  document.getElementById('am-wrap').innerHTML = text;
  
   form.link_1.value = '';
   form.title.value = '';
