@@ -149,7 +149,7 @@ link_1.onchange = onchFunc;
 
 } else {
 $(this).removeClass('btn-success').html('<span title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>');
-$('#prompt-form').remove();}
+$('#add-mode-form').remove();}
   });
   
   /***AddModeHelpBtn***/
