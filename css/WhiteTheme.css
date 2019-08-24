@@ -158,7 +158,7 @@ button:disabled{color: white !important;background-color: black !important;}
     text-shadow: none !important;
 }
 .video-js .vjs-control-bar {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255) !important;
     border: 1px solid black;
 }
 .video-js .vjs-play-progress {
