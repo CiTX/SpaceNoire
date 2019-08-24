@@ -523,3 +523,24 @@ div.upload {
 .btn-success:hover,.btn-success {
     background-image: linear-gradient(#5bc0de,#5bc0de 40%,#131c34) !important;
 }
+
+/*** update 1.1 ***/
+
+.userlist_afk span.userlist_guest, .userlist_afk, .userlist_afk span.userlist_op, .userlist_afk span.userlist_owner{color: #696464 !important;text-decoration: line-through}
+#userlist{word-wrap: break-word}
+.panel-primary>.panel-heading {
+    background: linear-gradient(#28a6dc,#269bcd 60%,#28a6dc) !important;color: white;
+}
+.panel-default>.panel-heading {
+    background: linear-gradient(to bottom,rgba(0,10,20,0.8),rgba(64, 75, 152, 0.55))!important;}
+   
+.close {
+    color: red;
+    text-shadow: 0 1px 0 #000;
+}
+.close:focus, .close:hover {
+    color: red;
+}
+.pm-buffer.linewrap{background-color: black;}
+#pictures-control-panel, #picture-address {
+    bottom: 80px;}
