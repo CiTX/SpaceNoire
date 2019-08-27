@@ -149,7 +149,7 @@ link_1.onchange = onchFunc;
 
 } else {
 $(this).removeClass('btn-success').html('<span title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>');
-$('#add-mode-form').remove();}
+$('#add-mode-form').remove();$('#help-addmode-btn').remove();}
   });
   
   /***AddModeHelpBtn***/
@@ -179,7 +179,7 @@ window.cytubeEnhanced.addModule('AMHelpBtn', function (app, settings) {
 	    };
 	    this.$AddModeHelpBtn = $('<button id="help-addmode-btn" class="btn btn-sm btn-default" title="Инструкция по добавлению сериалов"><i class="glyphicon glyphicon-question-sign">')
 	        .text(app.t(''))
-	        .insertAfter('#add-mode-btn')
+	        .insertAfter('#add-mode-form')
 	        .on('click', function () {
 	            that.handleAddVideoBtn(that.commands);
 	        });
