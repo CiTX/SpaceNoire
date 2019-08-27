@@ -101,14 +101,7 @@ function showPrompt(text,callback) {
     postlinks();
   };
 }
- 
- 
- 
- 
- 
- 
- 
- 
+
 var formNode = link_1.parentNode.parentNode;
 var prevNode = undefined;
 var activeNode = link_1;
@@ -147,13 +140,7 @@ var onchFunc = function() {
 link_1.num = 1;
 link_1.onchange = onchFunc;   
 
-} else {
-$(this).removeClass('btn-success').html('<span title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>');
-$('#add-mode-form').remove();$('#help-addmode-btn').remove();}
-  });
-  
-  /***AddModeHelpBtn***/
-	
+/***AddModeHelpBtn***/
 window.cytubeEnhanced.addModule('AMHelpBtn', function (app, settings) {
 	    'use strict';
 	    var that = this;
@@ -184,8 +171,14 @@ window.cytubeEnhanced.addModule('AMHelpBtn', function (app, settings) {
 	            that.handleAddVideoBtn(that.commands);
 	        });
 	});
+/***END***/	
 
-/***END***/
+} else {
+$(this).removeClass('btn-success').html('<span title="Открыть форму для добавления"><i class="glyphicon glyphicon-plus-sign"></span>');
+$('#add-mode-form').remove();$('#help-addmode-btn').remove();}
+  });
+  
+
 
 
 function updateAddMode() {
