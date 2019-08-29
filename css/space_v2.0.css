@@ -536,6 +536,13 @@ div.upload {
 
 /*** update 1.2 ***/
 @-moz-document url-prefix(){
+@media (min-width: 992px){
+#chat-panel {
+    margin-right: 15px !important;
+    margin-left: 15px;
+}
+}
+ 
 #userlist{width: 75px}
 #chat-panel, body, #queue, #messagebuffer,#userlist {
     overflow-y: auto;scrollbar-width: none;
