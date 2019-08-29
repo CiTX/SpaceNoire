@@ -433,17 +433,6 @@ color: rgb(132, 213, 254);
 }
 @media (max-width: 768px){#userlist, #messagebuffer{height: 50vh !important;}}
 
-#wrap > nav > div.navbar-header > a:before {
-    content: "";
-    display: inline-block;
-    width: 55px;
-    height: 50px;
-    margin-left: 10px;
-    margin-top:10px;
-    background: url(https://dl.dropbox.com/s/numjs91agmoywkz/59b89b275ccacf0c4ed74317.gif) no-repeat 0 0;
-    background-size: 100%;
-}
-
 #pictures-control-panel, #picture-address{position: fixed; bottom:32px;left: 0px;width:calc(30vw - 5px) !important;}
 #picture-address{position: absolute; top:32px;left: 0px;width:calc(30vw - 10px) !important;}
 #favourite-pictures-panel{height: 100%;overflow-y: hidden;}
