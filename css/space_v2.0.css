@@ -533,3 +533,11 @@ div.upload {
 .pm-buffer.linewrap{background-color: black;}
 #pictures-control-panel, #picture-address {
     bottom: 80px;}
+
+/*** update 1.2 ***/
+@-moz-document url-prefix(){
+#userlist{width: 75px}
+#chat-panel, body, #queue, #messagebuffer,#userlist {
+    overflow-y: auto;scrollbar-width: none;
+}    
+}
