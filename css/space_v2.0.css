@@ -548,3 +548,8 @@ div.upload {
     overflow-y: auto;scrollbar-width: none;
 }    
 }
+/* update 1.3 */
+#wrap{padding: 0 0px 0px;}
+@media (max-width: 992px){
+#wrap{padding: 0 15px 0px;}
+}
