@@ -216,7 +216,7 @@ button:disabled{color: white !important;background-color: black !important;}
 }
 /*fix lite mode*/
 @media (min-width: 992px){
-add-mode-form,#motd, #motdrow, .well,#motdrow:before,#motdrow:hover,#leftpane-inner,#rightpane-inner {
+#add-mode-form,#motd, #motdrow, .well,#motdrow:before,#motdrow:hover,#leftpane-inner,#rightpane-inner {
     background-color: white  !important;;
 }
 #leftpane {
