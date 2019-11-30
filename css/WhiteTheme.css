@@ -214,6 +214,9 @@ button:disabled{color: white !important;background-color: black !important;}
 #videowrap-header {
     background-color: rgb(255, 255, 255) !important;
 }
+.video-js .vjs-volume-level {
+    background-color: #4a88b9;
+}
 /*fix lite mode*/
 @media (min-width: 992px){
 #queue,#add-mode-form,#motd, #motdrow, .well,#motdrow:before,#motdrow:hover,#leftpane-inner,#rightpane-inner {
