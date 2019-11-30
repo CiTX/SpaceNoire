@@ -214,3 +214,14 @@ button:disabled{color: white !important;background-color: black !important;}
 #videowrap-header {
     background-color: rgb(255, 255, 255) !important;
 }
+/*fix lite mode*/
+@media (min-width: 992px){
+#usercount,#motdrow,#motdrow:before,#motdrow:hover,#leftpane-inner,#rightpane-inner {
+    background-color: white  !important;;
+}
+#usercount {
+    color: black !important;}
+#leftpane {
+    background-color: transparent;}
+}
+/*end fix lite mode*/
