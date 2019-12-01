@@ -233,3 +233,6 @@ height: 70% !important;
 @media (max-width: 992px){
 .profile-box {background: white !important;}
 }
+.video-js {
+    background: white;
+}
