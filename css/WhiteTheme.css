@@ -228,3 +228,7 @@ button:disabled{color: white !important;background-color: black !important;}
 #messagebuffer a, #motdwrap a, footer a {
     color: #0b4bff !important;}
 /*end fix lite mode*/
+
+@media (max-width: 992px){
+.profile-box {background: white !important;}
+}
