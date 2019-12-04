@@ -1697,6 +1697,21 @@ asbtn = $('<span id="allowskip-btn" class="label label-default pull-right pointe
 .appendTo("#chatheader")
 .on("click", function () {$('#cs-allow_voteskip').click();})
 
+function addClassAllowSkip (){
+    if (CHANNEL.opts.allow_voteskip == false){
+    $('#allowskip-btn').addClass('label-success');}
+   else{$('#allowskip-btn').removeClass('label-success');} 
+}
+addClassAllowSkip();
+socket.on("channelOpts", function() { addClassAllowSkip(); });
+$(`
+<style>
+#allowskip-btn.label-default.label-success {
+    background: #87CEEB !important;
+    color: black;}
+</style>
+`).appendTo('head');
+
 if (!window.hasPermission("chatclear")) {
 	        $('#kick-btn').hide();
 	        $('#allowskip-btn').hide();
