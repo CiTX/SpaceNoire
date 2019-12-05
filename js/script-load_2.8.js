@@ -3,6 +3,8 @@ $.getScript("https://citx.github.io/SpaceNoire/js/radio.js");
 $.getScript('https://citx.github.io/SpaceNoire/js/add-mode.js');
 $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
 
+$('#messagebuffer').on('click','.username',function(){insertNick($(this).text() = null);})
+
 /* Chat images */
 var imgurUpload = function() {
 if ($("#uploadbtn").length == 0)
