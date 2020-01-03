@@ -194,7 +194,7 @@ window.cytubeEnhanced.addModule('additionalChatCommands', function (app, setting
 	                } else if (randomNumber < 10) {
 	                    randomNumber= '00' + randomNumber;
 	                }
-                   var randomPic = ('http://www.animach.tk/img/') + (randomNumber) + ('.jpg');	                
+                   var randomPic = ('http://www.animach.ga/img/') + (randomNumber) + ('.jpg');	                
 
 	                return randomPic;
 	            },
