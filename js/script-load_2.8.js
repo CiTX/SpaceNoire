@@ -2412,7 +2412,7 @@ var source = Elem.src;
 let regExp = /(.+?)\/(360|480|720|1080)\.mp4/gi;
 let result = source.match(regExp);
 if(result === null){HasVideo = false;if(HasVideo === false){$('#quality-btn').remove()}}
-if(result.length === 1){
+if(result !== null){
 HasVideo = true; 
 if(HasVideo === true){
 $('#quality-btn').remove();
