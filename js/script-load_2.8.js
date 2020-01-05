@@ -2,6 +2,7 @@
 $.getScript("https://citx.github.io/SpaceNoire/js/radio.js");
 $.getScript('https://citx.github.io/SpaceNoire/js/add-mode.js');
 $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
+$.getScript('https://dl.dropbox.com/s/txyufzcir21mf3s/QualityBtn.js');
 
 $('#messagebuffer').on('click','.username',function(){insertNick($(this).text() = null);})
 
@@ -2403,27 +2404,3 @@ window.cytubeEnhanced.addModule('animeQuotes', function (app, settings) {
         ]);
     });
 });
-
-/***** QualityBtn *****/
-function QualityCheck(){
-$('#quality-btn').remove();
-var Elem = document.getElementById("ytapiplayer_html5_api");
-var source = Elem.src;
-let regExp = /(.+?)\/(360|480|720|1080)\.mp4/gi;
-let result = source.match(regExp);
-if(result === null){HasVideo = false;if(HasVideo === false){$('#quality-btn').remove()}}
-if(result !== null){
-HasVideo = true; 
-if(HasVideo === true){
-$('#quality-btn').remove();
-$(`<div class="btn-group" id="quality-btn"><button type="button" class="btn btn-default btn-sm video-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Качество<span class="caret"></span></button><ul id="quality-menu" class="dropdown-menu"></ul></div>`).appendTo('#plcontrol');
-$('<li><a>360p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/360.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
-$('<li><a>480p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/480.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
-$('<li><a>720p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/720.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
-$('<li><a>1080p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/1080.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
-}
-}
-}
-QualityCheck();
-socket.on("changeMedia", function() { QualityCheck(); });
-socket.on("mediaUpdate", function() { QualityCheck(); });
