@@ -5,6 +5,30 @@ $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
 
 $('#messagebuffer').on('click','.username',function(){insertNick($(this).text() = null);})
 
+/***** QualityBtn *****/
+function QualityCheck(){
+$('#quality-btn').remove();
+var Elem = document.getElementById("ytapiplayer_html5_api");
+var source = Elem.src;
+let regExp = /(.+?)\/(360|480|720|1080)\.mp4/gi;
+let result = source.match(regExp);
+if(result === null){HasVideo = false;if(HasVideo === false){$('#quality-btn').remove()}}
+if(result.length === 1){
+HasVideo = true; 
+if(HasVideo === true){
+$('#quality-btn').remove();
+$(`<div class="btn-group" id="quality-btn"><button type="button" class="btn btn-default btn-sm video-dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Качество<span class="caret"></span></button><ul id="quality-menu" class="dropdown-menu"></ul></div>`).appendTo('#plcontrol');
+$('<li><a>360p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/360.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
+$('<li><a>480p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/480.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
+$('<li><a>720p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/720.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
+$('<li><a>1080p</a></li>').appendTo("#quality-menu").on("click", function(){var change360 = `$1\/1080.mp4`;var changed = source.replace(/(.+?)\/(360|480|720|1080)\.mp4/gi, change360);Elem.src = changed;})
+}
+}
+}
+QualityCheck();
+socket.on("changeMedia", function() { QualityCheck(); });
+socket.on("mediaUpdate", function() { QualityCheck(); });
+
 /* Chat images */
 var imgurUpload = function() {
 if ($("#uploadbtn").length == 0)
