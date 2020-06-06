@@ -74,7 +74,7 @@ function showPrompt(text,callback) {
             if (x <= args[3]){
             myLoop();
             }
-          }, 1000)
+          }, 3000)
         };
         myLoop();
       } else {
@@ -92,7 +92,7 @@ function showPrompt(text,callback) {
             if (i < len){
             myLoop();
             }
-          }, 1000)
+          }, 3000)
         };
         myLoop();
       }
