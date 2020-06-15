@@ -106,7 +106,7 @@ var formNode = link_1.parentNode.parentNode;
 var prevNode = undefined;
 var activeNode = link_1;
 var onchFunc = function() {
-    console.log("onfunc")
+    //console.log("onfunc")
     var num = this.num;        
     if (this.value) {
         if (this == activeNode) {
@@ -120,7 +120,7 @@ var onchFunc = function() {
           prevNode   = activeNode;
           activeNode = p.childNodes[0];
           formNode.insertBefore(p, this.parentNode.nextElementSibling);
-          console.log(formNode.children.length)
+          //console.log(formNode.children.length)
         }
  
     } else {
