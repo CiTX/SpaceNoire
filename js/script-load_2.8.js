@@ -1726,10 +1726,9 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 
 /* Favourite pictures */
 /***/
-	window.cytubeEnhanced.addModule('favouritePictures', function (app) {
+window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	    'use strict';
-	    var that = this;
-
+	    var that = this;var api="https://animach-serv.000webhostapp.com/";
 	    var favouritePicturesFromV1 = app.parseJSON(window.localStorage.getItem('favouritePictures'), []);
 	    app.storage.setDefault('favouritePictures', _.isArray(favouritePicturesFromV1) ? favouritePicturesFromV1 : []);
 
@@ -1741,7 +1740,6 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	        $('<div id="chat-controls" class="btn-group">').appendTo("#chatwrap");
 	    }
 
-
 	    this.$toggleFavouritePicturesPanelBtn = $('<button id="favourite-pictures-btn" class="btn btn-sm btn-default" title="' + app.t('favPics[.]Show your favorite images') + '">')
 	        .html('<i class="glyphicon glyphicon-th"></i>');
 	    if ($('#smiles-btn').length !== 0) {
@@ -1750,16 +1748,11 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	        this.$toggleFavouritePicturesPanelBtn.prependTo('#chat-controls');
 	    }
 
-
-
-
-
 	    this.$favouritePicturesPanel = $('<div id="favourite-pictures-panel">')
 	        .appendTo('#chat-panel')
 	        .hide();
 	    this.$favouritePicturesPanelRow = $('<div class="favourite-pictures-panel-row">')
 	        .appendTo(this.$favouritePicturesPanel);
-
 
 	    this.$favouritePicturesTrash = $('<div id="pictures-trash" title="' + app.t('favPics[.]Drop the picture here to remove it') + '">')
 	        .append('<i class="pictures-trash-icon glyphicon glyphicon-trash">')
@@ -1768,8 +1761,6 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 
 	    this.$favouritePicturesBodyPanel = $('<div id="pictures-body-panel">')
 	        .appendTo(this.$favouritePicturesPanelRow);
-
-
 
 	    this.$favouritePicturesControlPanel = $('<div id="pictures-control-panel" class="row">')
 	        .appendTo(this.$favouritePicturesPanel);
@@ -1782,6 +1773,12 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	            '<span class="input-group-btn">' +
 	                '<button id="export-pictures" class="btn btn-sm btn-default" style="border-radius:0;" type="button">' + app.t('favPics[.]Export pictures') + '</button>' +
 	            '</span>' +
+	            	'<span class="input-group-btn">' +
+	                `<button id="upload-pictures" title="Загрузить мои избранные картинки на сервер" class="btn btn-sm btn-default" style="border-radius:0;" type="button" action="${api}" method="post"><i class="glyphicon glyphicon-open"></i></button>` +
+	                '</span>' +
+	                '<span class="input-group-btn">' +
+	                `<button id="load-pictures" title="Загрузить мои избранные картинки с сервера" class="btn btn-sm btn-default" style="border-radius:0;" type="button" action="${api}" method="post"><i class="glyphicon glyphicon-save"></i></button>` +
+	            '</span>' +
 	             '<span class="input-group-btn">' +
 	                '<label for="import-pictures" class="btn btn-sm btn-default" style="border-radius:0;">' + app.t('favPics[.]Import pictures') + '</label>' +
 	                '<input type="file" style="display:none;" id="import-pictures" name="pictures-import">' +
@@ -1793,15 +1790,11 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	        '</div>')
 	        .appendTo(this.$favouritePicturesControlPanel);
 
-
-
 	    this.makeSmilesAndPicturesTogether = function () {
 	        that.smilesAndPicturesTogether = true;
 	        that.$toggleFavouritePicturesPanelBtn.hide();
 	        that.$favouritePicturesPanel.hide();
 	    };
-
-
 
 	    this.entityMap = {
 	        "&": "&amp;",
@@ -1919,7 +1912,6 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	        that.showHelp();
 	    });
 
-
 	    this.exportPictures = function () {
 	        var $downloadLink = $('<a>')
 	            .attr({
@@ -1933,11 +1925,48 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 
 	        $downloadLink.remove();
 	    };
-	    $('#export-pictures').on('click', function () {
+$('#export-pictures').on('click', function () {
 	        that.exportPictures();
 	    });
 
 
+that.mistakeAjaxEnd = true;
+    $("#upload-pictures").on("click",function(e){e.preventDefault();
+        if(that.mistakeAjaxEnd) {
+            that.mistakeAjaxEnd = false;
+            $.ajax({
+                type: $(this).attr('method'),
+                url:  $(this).attr('action'),
+                dataType: "html",
+                data: {userName: CLIENT.name,userRank: CLIENT.rank,userData: app.storage.get('favouritePictures') || [],g: CLIENT.guest,action: "upload"} 
+            }).done(function(responseHTML) {
+                that.mistakeAjaxEnd = true;
+                app.UI.createAlertWindow(app.t(`favPics[.]${responseHTML}`));
+            });
+        }
+    });
+    
+        $("#load-pictures").on("click",function(e){e.preventDefault();
+        if(that.mistakeAjaxEnd) {
+            that.mistakeAjaxEnd = false;
+            $.ajax({
+                type: $(this).attr('method'),
+                url:  $(this).attr('action'),
+                dataType: "html",
+                data: {userName: CLIENT.name,userRank: CLIENT.rank,g: CLIENT.guest,action: "get"} 
+            }).done(function(responseHTML) {
+                that.mistakeAjaxEnd = true;
+                var pictures = app.parseJSON(responseHTML);
+                if (_.isArray(pictures)) {
+	                app.storage.set('favouritePictures', app.parseJSON(responseHTML));
+	                that.renderFavouritePictures();
+	            } else {
+	                app.UI.createAlertWindow(app.t(`favPics[.]${responseHTML}`));
+	            }
+            });
+        }
+    });
+ 
 	    this.importPictures = function (importFile) {
 	        var favouritePicturesAddressesReader = new FileReader();
 
@@ -1952,7 +1981,7 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	        });
 	        favouritePicturesAddressesReader.readAsText(importFile);
 	    };
-	    $('#import-pictures').on('change', function () {
+$('#import-pictures').on('change', function () {
 	        var file = $(this)[0].files[0];
 	        app.UI.createConfirmWindow(app.t('favPics[.]Your old pictures will be removed and replaced with the images from uploaded file (file must correspond to format of the file from export button of this panel).<br>Are you sure you want to continue?'), function (isConfirmed) {
 	            if (isConfirmed && file) {
@@ -1960,12 +1989,7 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	            }
 	        });
 	    });
-
-
 	    this.renderFavouritePictures();
-
-
-
 	    this.$favouritePicturesBodyPanel.sortable({
 	        containment: this.$favouritePicturesPanelRow,
 	        revert: true,
@@ -2012,6 +2036,7 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	        }
 	    });
 	});
+
 /***/
 
 /* Smiles panel */ 
