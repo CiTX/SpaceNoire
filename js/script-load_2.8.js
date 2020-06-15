@@ -1938,7 +1938,7 @@ that.mistakeAjaxEnd = true;
                 type: $(this).attr('method'),
                 url:  $(this).attr('action'),
                 dataType: "html",
-                data: {userName: CLIENT.name,userRank: CLIENT.rank,userData: app.storage.get('favouritePictures') || [],g: CLIENT.guest,action: "upload"} 
+                data: {userName: username,userRank: CLIENT.rank,userData: app.storage.get('favouritePictures') || [],g: CLIENT.guest,action: "upload"} 
             }).done(function(responseHTML) {
                 that.mistakeAjaxEnd = true;
                 app.UI.createAlertWindow(app.t(`favPics[.]${responseHTML}`));
@@ -1953,7 +1953,7 @@ that.mistakeAjaxEnd = true;
                 type: $(this).attr('method'),
                 url:  $(this).attr('action'),
                 dataType: "html",
-                data: {userName: CLIENT.name,userRank: CLIENT.rank,g: CLIENT.guest,action: "get"} 
+                data: {userName: username,userRank: CLIENT.rank,g: CLIENT.guest,action: "get"} 
             }).done(function(responseHTML) {
                 that.mistakeAjaxEnd = true;
                 var pictures = app.parseJSON(responseHTML);
