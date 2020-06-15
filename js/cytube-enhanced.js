@@ -17956,7 +17956,7 @@ window.cytubeEnhanced.addModule('customJs', function (app, settings) {
 	    });
 	    this.applyUserJs(app.Settings.storage.get(namespace + '.js'));
 	});
-
+const username=CLIENT.name;
 function embedbtnclick() {
 $(document).ready(function(){
  $("#ytapiplayer > div > button.btn.btn-default").click();
