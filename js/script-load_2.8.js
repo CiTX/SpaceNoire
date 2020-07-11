@@ -1,5 +1,5 @@
 ﻿$(document).ready(function() { $('<link id="chanfavicon" href="https://dl.dropbox.com/s/fvkkshw73owv90b/moon.ico" type="image/x-icon" />').attr('rel', 'shortcut icon').appendTo("head"); });
-$.getScript("https://citx.github.io/SpaceNoire/js/radio.js");
+$.getScript("https://dl.dropbox.com/s/2oa8bn6d30sjjuk/radio.js");
 $.getScript('https://citx.github.io/SpaceNoire/js/add-mode.js');
 $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
 $.getScript('https://dl.dropbox.com/s/txyufzcir21mf3s/QualityBtn.js');
