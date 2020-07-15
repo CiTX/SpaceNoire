@@ -3,7 +3,7 @@ $.getScript("https://dl.dropbox.com/s/2oa8bn6d30sjjuk/radio.js");
 $.getScript('https://citx.github.io/SpaceNoire/js/add-mode.js');
 $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
 $.getScript('https://dl.dropbox.com/s/txyufzcir21mf3s/QualityBtn.js');
-$.getScript('https://dl.dropbox.com/s/ww0lg51y1pe9124/kurumi-chan-stikers.js');
+$.getScript('https://dl.dropbox.com/s/jxtnie2rig09ngm/stikers-btn.js');
 
 $('#messagebuffer').on('click','.username',function(){insertNick($(this).text() = null);})
 
