@@ -196,13 +196,13 @@ window.cytubeEnhanced.addModule('additionalChatCommands', function (app, setting
 	                } else if (randomNumber < 10) {
 	                    randomNumber= '00' + randomNumber;
 	                }
-                   var randomPic = ('http://www.animach.ga/img/') + (randomNumber) + ('.jpg');	                
+                   var randomPic = ('http://www.animach.tk/img/') + (randomNumber) + ('.jpg');	                
 
 	                return randomPic;
 	            },
 	            canBeOmitted: true
 	        },
-	        '!picrandom': {
+	        '!randpic': {
 	            description: app.t(''),
 	            value: function (msg) {
 	                var random_images_array = ["1363382418078.png", 
