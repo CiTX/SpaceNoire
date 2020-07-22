@@ -433,10 +433,10 @@ color: rgb(132, 213, 254);
 }
 @media (max-width: 768px){#userlist, #messagebuffer{height: 50vh !important;}}
 
-#pictures-control-panel, #picture-address{position: fixed; bottom:32px;left: 0px;width:calc(30vw - 5px) !important;}
+/*#pictures-control-panel, #picture-address{position: fixed; bottom:32px;left: 0px;width:calc(30vw - 5px) !important;}
 #picture-address{position: absolute; top:32px;left: 0px;width:calc(30vw - 10px) !important;}
 #favourite-pictures-panel{height: 100%;overflow-y: hidden;}
-#pictures-control-panel{background-color: rgba(0,0,0,0.7);}
+#pictures-control-panel{background-color: rgba(0,0,0,0.7);}*/
 
 /*self chat fix*/
 .self strong.username{color: rgb(131, 111, 193);}
