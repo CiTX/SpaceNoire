@@ -531,8 +531,8 @@ div.upload {
     color: red;
 }
 .pm-buffer.linewrap{background-color: black;}
-#pictures-control-panel, #picture-address {
-    bottom: 80px;}
+/*#pictures-control-panel, #picture-address {
+    bottom: 80px;}*/
 
 /*** update 1.2 ***/
 @-moz-document url-prefix(){
