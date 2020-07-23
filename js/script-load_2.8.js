@@ -2131,7 +2131,7 @@ $('#import-pictures').on('change', function () {
 	        that.$smilesPanel.hide();
 	    };
 	});
-$('#smiles-btn').html('<img src="http://i.imgur.com/DT3sXCp.png" style="width: 18px;height: 18px;"/>');
+$('#smiles-btn').html('<img src="https://i.imgur.com/DT3sXCp.png" style="width: 18px;height: 18px;"/>');
 
 
 
