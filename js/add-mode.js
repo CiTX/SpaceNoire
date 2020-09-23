@@ -62,7 +62,7 @@ function showPrompt(text,callback) {
     callback(args);
  
     function postlinks() {
-	    /*function rl(e){let a=/(.+?)(\.mp4)(.+?)*/gi;let b=`$1$2`;let c=e.replace(a,b);return c}*/
+	    //function rl(e){let a=/(.+?)(\.mp4)(.+?)*/gi;let b=`$1$2`;let c=e.replace(a,b);return c}
       if (args.length == 4) {
         var x = args[2];
         var stuplink = args[0];
