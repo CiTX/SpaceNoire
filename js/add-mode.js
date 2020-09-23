@@ -62,10 +62,10 @@ function showPrompt(text,callback) {
     callback(args);
  
     function postlinks() {
-	    function rl(e){let a=/(.+?)(\.mp4)(.+?)*/gi;let b=`$1$2`;let c=e.replace(a,b);return c}
+	    /*function rl(e){let a=/(.+?)(\.mp4)(.+?)*/gi;let b=`$1$2`;let c=e.replace(a,b);return c}*/
       if (args.length == 4) {
         var x = args[2];
-        var stuplink = rl(args[0]);
+        var stuplink = args[0];
         function myLoop (){
           setTimeout(function () {
             var link = stuplink+x+".mp4";
@@ -85,7 +85,7 @@ function showPrompt(text,callback) {
         var i = 0;
         function myLoop (){
           setTimeout(function () {
-            var link = rl(args[i]);
+            var link = args[i];
             var name = args[len]+' '+x+' серия';
             socket.emit("queue", {id: link,title: name,pos: 'end',type: 'fi',temp: $(".add-temp").prop("checked")});
             x++;
