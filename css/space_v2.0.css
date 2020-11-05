@@ -422,7 +422,7 @@ background: linear-gradient(to bottom,rgba(0,10,20,0.8),rgba(64, 75, 152, 0.55))
     font-family: Trebuchet MS;
 }
 
-strong.username{color: #28a6dc;}
+span:not([class]) strong.username{color: #28a6dc;}
 .queue_active .qe_title, #currenttitle, #userlist, #usercount, #nav-collapsible {font-family: Monotype Corsiva;
 }
 body{background: url(https://dl.dropbox.com/s/4i9566rjnu8fzs7/1.jpg) repeat;} 
