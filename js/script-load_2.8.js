@@ -1726,20 +1726,24 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 
 /* Favourite pictures */
 /***/
-window.cytubeEnhanced.addModule('favouritePictures', function (app) {
+
+	window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	    'use strict';
-	    var that = this;var api="https://animach-serv.000webhostapp.com/";
+		UI_FPSM=2;
+	    var that = this;
+        var api="https://animach-s.000webhostapp.com/api/";
 	    var favouritePicturesFromV1 = app.parseJSON(window.localStorage.getItem('favouritePictures'), []);
 	    app.storage.setDefault('favouritePictures', _.isArray(favouritePicturesFromV1) ? favouritePicturesFromV1 : []);
-
+	    that.mistakeAjaxEnd = true;
+		function timeStamp(){var d=new Date();var dh=d.getHours();if(dh<10){dh="0"+dh}var dm=d.getMinutes();if(dm<10){dm="0"+dm}var ds=d.getSeconds();if(ds<10){ds="0"+ds}d="["+dh+":"+dm+":"+ds+"] ";return d}
+        function serverImg(e,u){if(CLIENT.rank>0){if(that.mistakeAjaxEnd){that.mistakeAjaxEnd=false;$.ajax({type:'post',url:api,dataType:"html",data:{userName: username,userData: u,userRank: CLIENT.rank,g: CLIENT.guest,action: e}}).done(function(responseHTML){that.mistakeAjaxEnd=true;var d=timeStamp();if(UI_FPSM==0){console.log(responseHTML)}if(UI_FPSM==1){app.UI.createAlertWindow(app.t(`favPics[.]${responseHTML}`));}if(UI_FPSM==2){$(`<span class="server-whisper"><span class="timestamp">${d}</span><font>${responseHTML}</font></span></br>`).appendTo("#messagebuffer");scrollChat();}if(typeof(localStorage.fpscf)!="undefined"){localStorage.removeItem('fpscf');}}).fail(function(){var d=timeStamp();$(`<span class="server-whisper"><span class="timestamp">${d}</span><font>Ошибка: сервер картинок недоступен.</font></span></br>`).appendTo("#messagebuffer");scrollChat();if(typeof(localStorage.fpscf)=="undefined"){localStorage.fpscf=true;}});}}else{}}
+        function sig(i,l){if(CLIENT.rank>0){if(that.mistakeAjaxEnd){that.mistakeAjaxEnd=false;$.ajax({type:'post',url:api,dataType:"html",data:{userName: username,userData:l,userRank: CLIENT.rank,g: CLIENT.guest,action:i}}).done(function(responseHTML){that.mistakeAjaxEnd=true;var pictures=app.parseJSON(responseHTML);var d=timeStamp();if(_.isArray(pictures)){app.storage.set('favouritePictures', app.parseJSON(responseHTML));that.renderFavouritePictures();console.log(app.storage.get('favouritePictures').length+" картинки загружены с сервера");}else{if(UI_FPSM==0){console.log(responseHTML)}if(UI_FPSM==1){app.UI.createAlertWindow(app.t(`favPics[.]${responseHTML}`));}if(UI_FPSM==2){$(`<span class="server-whisper"><span class="timestamp">${d}</span><font>${responseHTML}</font></span></br>`).appendTo("#messagebuffer");scrollChat();}}if(typeof(localStorage.fpscf)!="undefined"){localStorage.removeItem('fpscf');}}).fail(function(){var d=timeStamp();$(`<span class="server-whisper"><span class="timestamp">${d}</span><font>Ошибка: сервер недоступен.</font></span></br>`).appendTo("#messagebuffer");scrollChat();if(typeof(localStorage.fpscf)=="undefined"){localStorage.fpscf=true;}});}}else{}}
 	    if ($('#chat-panel').length === 0) {
-	        $('<div id="chat-panel" class="row">').insertAfter("#messagebuffer");
+	        $('<div id="chat-panel" class="row">').insertAfter("#controlsrow");
 	    }
-
 	    if ($('#chat-controls').length === 0) {
 	        $('<div id="chat-controls" class="btn-group">').appendTo("#chatwrap");
 	    }
-
 	    this.$toggleFavouritePicturesPanelBtn = $('<button id="favourite-pictures-btn" class="btn btn-sm btn-default" title="' + app.t('favPics[.]Show your favorite images') + '">')
 	        .html('<i class="glyphicon glyphicon-th"></i>');
 	    if ($('#smiles-btn').length !== 0) {
@@ -1758,7 +1762,6 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	        .append('<i class="pictures-trash-icon glyphicon glyphicon-trash">')
 	        .appendTo(this.$favouritePicturesPanelRow);
 
-
 	    this.$favouritePicturesBodyPanel = $('<div id="pictures-body-panel">')
 	        .appendTo(this.$favouritePicturesPanelRow);
 
@@ -1773,23 +1776,21 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	            '<span class="input-group-btn">' +
 	                '<button id="export-pictures" class="btn btn-sm btn-default" style="border-radius:0;" type="button">' + app.t('favPics[.]Export pictures') + '</button>' +
 	            '</span>' +
-	            	'<span class="input-group-btn">' +
-	                `<button id="upload-pictures" title="Загрузить мои избранные картинки на сервер" class="btn btn-sm btn-default" style="border-radius:0;" type="button" action="${api}" method="post"><i class="glyphicon glyphicon-open"></i></button>` +
-	                '</span>' +
-	                '<span class="input-group-btn">' +
+	            '<span class="input-group-btn">' +
 	                `<button id="load-pictures" title="Загрузить мои избранные картинки с сервера" class="btn btn-sm btn-default" style="border-radius:0;" type="button" action="${api}" method="post"><i class="glyphicon glyphicon-save"></i></button>` +
 	            '</span>' +
 	             '<span class="input-group-btn">' +
-	                '<label for="import-pictures" class="btn btn-sm btn-default" style="border-radius:0;">' + app.t('favPics[.]Import pictures') + '</label>' +
+	                '<label id="import-pictures-btn" for="import-pictures" class="btn btn-sm btn-default" style="border-radius:0;">' + app.t('favPics[.]Import pictures') + '</label>' +
 	                '<input type="file" style="display:none;" id="import-pictures" name="pictures-import">' +
 	            '</span>' +
-	        '</div></br>' +
-		    '<div>'+
 	            '<input type="text" id="picture-address" class="form-control input-sm" placeholder="' + app.t('favPics[.]Picture url') + '">' +
-	            '<button id="add-picture-btn" class="btn btn-sm btn-default" style="border-radius:0;" type="button">' + app.t('favPics[.]Add') + '</button>' +
-		    '</div>')
+	            '<span class="input-group-btn">' +
+	                '<button id="add-picture-btn" class="btn btn-sm btn-default" style="border-radius:0;" type="button">' + app.t('favPics[.]Add') + '</button>' +
+	            '</span>' +
+	        '</div>')
 	        .appendTo(this.$favouritePicturesControlPanel);
-
+$('#export-pictures').html(`<span title="Экспорт картинок"><i class="glyphicon glyphicon-floppy-save"></i></span>`);
+$('#import-pictures-btn').html(`<span title="Импорт картинок"><i class="glyphicon glyphicon-floppy-open"></i></span>`);
 	    this.makeSmilesAndPicturesTogether = function () {
 	        that.smilesAndPicturesTogether = true;
 	        that.$toggleFavouritePicturesPanelBtn.hide();
@@ -1814,10 +1815,9 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	        for (var n = 0, favouritePicturesLen = favouritePictures.length; n < favouritePicturesLen; n++) {
 	            var escapedAddress = favouritePictures[n].replace(/[&<>"']/g, this.replaceUnsafeSymbol);
 
-	            $('<img class="favourite-picture-on-panel">').attr({src: escapedAddress}).appendTo(this.$favouritePicturesBodyPanel);
+	            $(`<img class="favourite-picture-on-panel" onerror='this.src="https://i.imgur.com/6BMToAP.png"'>`).attr({src: escapedAddress}).appendTo(this.$favouritePicturesBodyPanel);
 	        }
 	    };
-
 
 	    this.insertFavouritePicture = function (address) {
 	        app.Helpers.addMessageToChatInput(' ' + address + ' ', 'end');
@@ -1826,16 +1826,19 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	        that.insertFavouritePicture($(this).attr('src'));
 	    });
 
-
 	    this.handleFavouritePicturesPanel = function ($toggleFavouritePicturesPanelBtn) {
 	        var smilesAndPicturesTogether = this.smilesAndPicturesTogether || false;
 
 	        if ($('#smiles-panel').length !== 0 && !smilesAndPicturesTogether) {
 	            $('#smiles-panel').hide();
 	        }
+			if ($("#emotesrow > div").length !== 0 && !smilesAndPicturesTogether) {
+	            $("#emotesrow > div").hide();
+				EMOTEPANEL_STATE = 0;
+				$("#emoteslist").empty();
+	        }
 
 	        this.$favouritePicturesPanel.toggle();
-
 
 	        if (!smilesAndPicturesTogether) {
 	            if ($toggleFavouritePicturesPanelBtn.hasClass('btn-default')) {
@@ -1856,7 +1859,6 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	        that.handleFavouritePicturesPanel($(this));
 	    });
 
-
 	    this.addFavouritePicture = function (imageUrl) {
 	        imageUrl = _.trim(imageUrl);
 	        if (imageUrl !== '') {
@@ -1865,6 +1867,7 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	            if (favouritePictures.indexOf(imageUrl) === -1) {
 	                if (imageUrl !== '') {
 	                    favouritePictures.push(imageUrl);
+		serverImg("push",imageUrl);
 	                }
 	            } else {
 	                window.makeAlert(app.t('favPics[.]The image already exists')).prependTo(this.$favouritePicturesBodyPanel);
@@ -1881,7 +1884,6 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	    };
 	    $('#add-picture-btn').on('click', function (e) {
 	        e.preventDefault();
-
 	        that.addFavouritePicture($('#picture-address').val().trim());
 	    });
 	    $('#picture-address').on('keypress', function (e) {
@@ -1890,14 +1892,12 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	        }
 	    });
 
-
 	    this.showHelp = function () {
 	        var $header = $('<div class="modal-header__inner">');
 	        $header.append($('<h3 class="modal-title">').text(app.t('Help')));
 
 	        var $wrapper = $('<div class="help-pictures-content">');
 	        $wrapper.append($('<p>' + app.t('favPics[.]<p>Favourite pictures feature if for saving favourite pictures like browser bookmarks.</p><p>Features:<ul><li><strong>Only links to images can be saved</strong>, so if image from link was removed, it also removes from your panel.</li><li>Images links are storing in browser. There are export and import buttons to share them between browsers.</li><li>Images are the same for site channels, but <strong>they are different for http:// and https://</strong></li></ul></p>') + '</p>'));
-
 
 	        var $exitPicturesHelpBtn = $('<button type="button" id="help-pictures-exit-btn" class="btn btn-info" data-dismiss="modal">' + app.t('favPics[.]Exit') + '</button>');
 	        var $footer = $('<div class="help-pictures-footer">');
@@ -1913,10 +1913,15 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 	    });
 
 	    this.exportPictures = function () {
+	        var d=new Date();
+	        var dh=d.getHours();var dm=d.getMinutes();var ds=d.getSeconds();
+	        var da=d.getDate();var mo=d.getMonth()+1;var ye=d.getFullYear();
+			let rc=function(e){if(e>=0&&e<10){e="0"+e}return e};
+	        d="time("+rc(dh)+"."+rc(dm)+"."+rc(ds)+")_date("+rc(da)+"."+rc(mo)+"."+ye+")";
 	        var $downloadLink = $('<a>')
 	            .attr({
 	                href: 'data:text/plain;charset=utf-8,' + encodeURIComponent(app.toJSON(app.storage.get('favouritePictures') || [])),
-	                download: 'pururin_favourite_images.txt'
+	                download: location.hostname+location.pathname+'_'+d+'_images.txt'
 	            })
 	            .hide()
 	            .appendTo($(document.body));
@@ -1928,45 +1933,11 @@ window.cytubeEnhanced.addModule('favouritePictures', function (app) {
 $('#export-pictures').on('click', function () {
 	        that.exportPictures();
 	    });
-
-
-that.mistakeAjaxEnd = true;
-    $("#upload-pictures").on("click",function(e){e.preventDefault();
-        if(that.mistakeAjaxEnd) {
-            that.mistakeAjaxEnd = false;
-            $.ajax({
-                type: $(this).attr('method'),
-                url:  $(this).attr('action'),
-                dataType: "html",
-                data: {userName: username,userRank: CLIENT.rank,userData: app.storage.get('favouritePictures') || [],g: CLIENT.guest,action: "upload"} 
-            }).done(function(responseHTML) {
-                that.mistakeAjaxEnd = true;
-                app.UI.createAlertWindow(app.t(`favPics[.]${responseHTML}`));
-            });
-        }
+    $("#load-pictures").on("click",function(e){e.preventDefault();
+    var asg=app.storage.get('favouritePictures');
+    if(asg.length!=0){}else{asg=""}
+    sig("get",asg);
     });
-    
-        $("#load-pictures").on("click",function(e){e.preventDefault();
-        if(that.mistakeAjaxEnd) {
-            that.mistakeAjaxEnd = false;
-            $.ajax({
-                type: $(this).attr('method'),
-                url:  $(this).attr('action'),
-                dataType: "html",
-                data: {userName: username,userRank: CLIENT.rank,g: CLIENT.guest,action: "get"} 
-            }).done(function(responseHTML) {
-                that.mistakeAjaxEnd = true;
-                var pictures = app.parseJSON(responseHTML);
-                if (_.isArray(pictures)) {
-	                app.storage.set('favouritePictures', app.parseJSON(responseHTML));
-	                that.renderFavouritePictures();
-	            } else {
-	                app.UI.createAlertWindow(app.t(`favPics[.]${responseHTML}`));
-	            }
-            });
-        }
-    });
- 
 	    this.importPictures = function (importFile) {
 	        var favouritePicturesAddressesReader = new FileReader();
 
@@ -1975,6 +1946,7 @@ that.mistakeAjaxEnd = true;
 	            if (_.isArray(pictures)) {
 	                app.storage.set('favouritePictures', app.parseJSON(e.target.result));
 	                that.renderFavouritePictures();
+	                serverImg("upload",app.parseJSON(e.target.result));
 	            } else {
 	                app.UI.createAlertWindow(app.t('favPics[.]Can\'t detect any pictures in this file.'));
 	            }
@@ -2000,7 +1972,7 @@ $('#import-pictures').on('change', function () {
 
 	            var imagePosition;
 	            if ((imagePosition = favouritePictures.indexOf(imageUrl)) !== -1) {
-	                favouritePictures.splice(imagePosition, 1);
+	                favouritePictures.splice(imagePosition, 1); 
 	            } else {
 	                return;
 	            }
@@ -2008,34 +1980,34 @@ $('#import-pictures').on('change', function () {
 	            if (typeof nextImageUrl !== 'undefined') {
 	                var nextImagePosition;
 	                if ((nextImagePosition = favouritePictures.indexOf(nextImageUrl)) !== -1) {
-	                    favouritePictures.splice(nextImagePosition, 0, imageUrl);
+	                    favouritePictures.splice(nextImagePosition, 0, imageUrl); 
+                serverImg("replace",[imageUrl,nextImageUrl,imagePosition,nextImagePosition]);                 
 	                }
 	            } else {
-	                favouritePictures.push(imageUrl);
+	                favouritePictures.push(imageUrl); 
+                serverImg("repush",[imageUrl,nextImageUrl,imagePosition,nextImagePosition]);  
 	            }
-
 	            app.storage.set('favouritePictures', favouritePictures);
 	        }
 	    });
-
-
 	    this.$favouritePicturesTrash.droppable({
 	        accept: ".favourite-picture-on-panel",
 	        hoverClass: "favourite-picture-drop-hover",
 	        drop: function (event, ui) {
 	            var imageUrl = ui.draggable.attr('src');
 	            var favouritePictures = app.storage.get('favouritePictures');
-
 	            var imagePosition;
 	            if ((imagePosition = favouritePictures.indexOf(imageUrl)) !== -1) {
 	                favouritePictures.splice(imagePosition, 1);
 	                app.storage.set('favouritePictures', favouritePictures);
+                serverImg("delete",imagePosition);
 	            }
 
 	            ui.draggable.remove();
 	        }
 	    });
-	});
+(function(){if(CLIENT.rank>0){var asg=app.storage.get('favouritePictures').length;if(typeof(localStorage.fpscf)!="undefined"){if(asg!=0){serverImg("upload",app.storage.get('favouritePictures')||[])}}else{if(asg!=0){sig("get","")}if(typeof(localStorage.fpfc)=="undefined"){localStorage.fpfc=true;if(asg!=0){serverImg("upload",app.storage.get('favouritePictures'))}else{sig("get","")}}}}})();
+});
 
 /***/
 
