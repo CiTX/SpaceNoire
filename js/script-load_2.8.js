@@ -2108,7 +2108,7 @@ $('#smiles-btn').html('<img src="https://i.imgur.com/DT3sXCp.png" style="width: 
 
 
 
-$("<style>")
+/*$("<style>")
     .attr("type","text/css")
     .appendTo("head")
     .text("\
@@ -2122,7 +2122,7 @@ $("<style>")
 \
 ");
 
-var chatpanelreplace=$('#chat-panel').detach();chatpanelreplace.appendTo('#messagebuffer');
+var chatpanelreplace=$('#chat-panel').detach();chatpanelreplace.appendTo('#messagebuffer');*/
 
 /***/
 
