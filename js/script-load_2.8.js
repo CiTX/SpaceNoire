@@ -2122,6 +2122,8 @@ $("<style>")
 \
 ");
 
+var chatpanelreplace=$('#chat-panel').detach();chatpanelreplace.appendTo('#messagebuffer');
+
 /***/
 
 
