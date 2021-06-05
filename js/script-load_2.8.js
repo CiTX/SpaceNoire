@@ -4,6 +4,7 @@ $.getScript('https://citx.github.io/SpaceNoire/js/add-mode.js');
 $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
 $.getScript('https://dl.dropbox.com/s/txyufzcir21mf3s/QualityBtn.js');
 $.getScript('https://dl.dropbox.com/s/jxtnie2rig09ngm/stikers-btn.js');
+UI_FPSM=2;
 
 $(document).off("click",".username");
 
