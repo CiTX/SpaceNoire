@@ -1732,7 +1732,7 @@ $('#pm-history-btn').html('<span title="История чата">H</span>');
 	    'use strict';
 		UI_FPSM=2;
 	    var that = this;
-        var api="https://animach-s.000webhostapp.com/api/";
+        var api="https://animach-si.000webhostapp.com/api/";
 	    var favouritePicturesFromV1 = app.parseJSON(window.localStorage.getItem('favouritePictures'), []);
 	    app.storage.setDefault('favouritePictures', _.isArray(favouritePicturesFromV1) ? favouritePicturesFromV1 : []);
 	    that.mistakeAjaxEnd = true;
