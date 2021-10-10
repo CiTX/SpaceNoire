@@ -17964,6 +17964,7 @@ $(document).ready(function(){
 }
 embedbtnclick();
 socket.on("changeMedia", function() { embedbtnclick(); });
+function insertText(str){$("#chatline").val($("#chatline").val() + str).focus();}
 $.getScript("https://citx.github.io/SpaceNoire/js/script-load_2.8.js");
 function modifiChatMsg() {
 var thischatname =".chat-msg-"+this.CLIENT.name

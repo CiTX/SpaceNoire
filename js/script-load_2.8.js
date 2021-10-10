@@ -5,7 +5,6 @@ $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
 $.getScript('https://dl.dropbox.com/s/txyufzcir21mf3s/QualityBtn.js');
 $.getScript('https://dl.dropbox.com/s/jxtnie2rig09ngm/stikers-btn.js');
 UI_FPSM=2;
-
 $(document).off("click",".username");
 
 /* Chat images */
@@ -1824,7 +1823,7 @@ $('#import-pictures-btn').html(`<span title="Импорт картинок"><i c
 	        app.Helpers.addMessageToChatInput(' ' + address + ' ', 'end');
 	    };
 	    $(document.body).on('click', '.favourite-picture-on-panel', function () {
-	        that.insertFavouritePicture($(this).attr('src'));
+	        insertText($(this).attr('src'));
 	    });
 
 	    this.handleFavouritePicturesPanel = function ($toggleFavouritePicturesPanelBtn) {
@@ -2052,7 +2051,7 @@ $('#import-pictures').on('change', function () {
 	        app.Helpers.addMessageToChatInput(' ' + smileName + ' ', 'end');
 	    };
 	    $(document.body).on('click', '.smile-on-panel', function () {
-	        that.insertSmile($(this).data('name'));
+	        insertText($(this).data('name'));
 	    });
 
 
