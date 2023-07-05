@@ -4,7 +4,6 @@ $.getScript('https://citx.github.io/SpaceNoire/js/add-mode.js');
 $.getScript('https://dl.dropboxusercontent.com/s/lb913gwi7dzgl8a/Users.js');
 $.getScript('https://dl.dropbox.com/s/txyufzcir21mf3s/QualityBtn.js');
 $.getScript('https://dl.dropbox.com/s/jxtnie2rig09ngm/stikers-btn.js');
-$.getScript('https://dl.dropbox.com/s/r8w4yrmwjt93ppz/findmovies.js');
 UI_FPSM=2;
 $(document).off("click",".username");
 
@@ -2412,3 +2411,8 @@ $("#videowrap-btns").remove(); function changeVideoWidth(direction){var body=doc
 void function(){function insertText(str){$("#chatline").val($("#chatline").val() + str).focus();}$('#chat-panel').bind('contextmenu',function(e){return false}).on("contextmenu",".smile-on-panel",function(){let a=$(this).data('name');insertText(' [gs] '+a+' [/gs] ')}).on("contextmenu",".favourite-pictures-panel-row img",function(){let a=$(this).attr("src");insertText(' [gs] '+a+' [/gs] ')})}();
 function SendBtnReplace(){$("#chatbtn").remove();$('#send-btn').remove();$('sb-style').remove();$('<button id="send-btn" class="btn btn-default btn-block" title="Отправить сообщение" style="width: 50px"><i class="glyphicon glyphicon-comment"></i></button>').insertAfter("#chatline").on("click", function(){if($("#chatline").val().trim()){socket.emit("chatMsg",{msg: $("#chatline").val(),meta: {}});$("#chatline").val("");}});$(`<style>`).addClass("sb-style").text(`#chatline{margin-right:50px;width: calc(100% - 50px);}#send-btn{position: relative;z-index: 0;top: -38px;margin-left: calc(100% - 50px);margin-bottom: -38px;}`).appendTo('head');}function SendBtnRemove(){$("#chatbtn").remove();$('#send-btn').remove();$('.sb-style').remove();}
 function SendBtnCheck(){if (USEROPTS.chatbtn === true){SendBtnReplace()}if(USEROPTS.chatbtn === false){SendBtnRemove()}}SendBtnCheck();
+(function(){
+$.getScript('https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js').done(()=>{
+DB = "https://dl.dropboxusercontent.com/s/";
+$.getScript(DB+'30exq8iuf621flx/socket_plus.js').done(()=>{$.getScript(DB+'r8w4yrmwjt93ppz/findmovies.js')});
+})})();
