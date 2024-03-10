@@ -1,4 +1,4 @@
-// myVideopage v0.2.7 beta
+﻿// myVideopage v0.2.7 beta
 
 function parseMediaLink(url) {
     if(typeof url != "string") {
