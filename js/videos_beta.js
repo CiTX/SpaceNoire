@@ -1,4 +1,4 @@
-﻿// myVideopage v0.2.7 beta
+// myVideopage v0.2.7 beta
 
 function parseMediaLink(url) {
     if(typeof url != "string") {
@@ -251,7 +251,6 @@ $('<style>')
 .appendTo('head')
 .addClass('my_vpb_0_2_4')
 .text(`
-
 #my_video_page_toggle a{
 margin-left: 20px;
 margin-right: 0px;
@@ -267,9 +266,6 @@ margin-right: 0px;
     background: url(https://dl.dropbox.com/s/dsomsxz1xei6330sbuddq/my_videos_icon.png?rlkey=zrhbwvegn8ytrgswuo2afqz9n) no-repeat 0 0;
     background-size: 100%;
 }
-
-
-
 #my_video_wrap {
     display: flex;
     -webkit-box-orient: vertical;
@@ -289,7 +285,6 @@ margin-right: 0px;
 #my_page_video_item{
 max-width:300px
 }
-
 .vduration{
     position: relative;
     top: -25px;
@@ -297,33 +292,27 @@ max-width:300px
     float: right;
     background-color: black;
 }
-
 .video_nav{
 width:100%;
 position: fixed;
 z-index: 2;
 background:black;
 }
-
 .video_nav.btn{
 border:1px solid grey;
 border-radius: 7px;
 }
-
 .yt-preview.mvpyt{
 border-radius: 5%;
 border: 1px solid #FF5722;
 }
-
 #footer{
 display:none
 }
-
 #my_video_page {
     height: calc(100vh - 70px);
     overflow-y: scroll;
 }
-
 .vopts {
     position: absolute;
     top: -28px;
@@ -331,7 +320,6 @@ display:none
     float: left;
     background-color: black;
 }
-
 .mvp_hide,.mvp_close{
     float: right;
     font-size: 12px;
@@ -347,7 +335,6 @@ display:none
 float: left;
 margin-right: 5px;
 }
-
 .vopts.pointer{
 display:block !important;
 background-color:black;
@@ -362,7 +349,6 @@ font-size:0px;
     background-position: center;
     border-radius: 15px;
 }
-
 .mvp-video-item,#mvplayer{
     width: 100%;
     height: calc(100vh - 270px);
@@ -371,18 +357,16 @@ font-size:0px;
     background-color: #ff7f5078;
     border-radius: 1em;
 }
-
 #my_video_wrap{overflow-x: hidden;}
 #my_video_wrap a{word-wrap: break-word;}
-
 .my_videos::before {
-    content: 'рџ’ѕ  '
+    content: '💾  '
 }
 .temp_videos::before {
-    content: 'рџ“њ '
+    content: '📜 '
 }
 .temp_fav::before {
-    content: 'вќ¤пёЏ '
+    content: '❤️ '
 }
 .video_nav {
     background-color: rgba(20,22,26,0.7);
@@ -488,7 +472,7 @@ function MVPgetCurrentData(div){
 	let vid=div.data('vid'),
 	type=div.data('type'),
 	index=-1;
-	
+
 	switch(type){
 		case 'addedByMe':
 			index=USRSTAT.last_videos.map(function(o) {return o.id}).indexOf(vid);
@@ -530,7 +514,7 @@ function MVP_PLAY_NEXT(){
 		if(mvp_current_meta.next){
 			getVideoSpace(mvp_current_meta.next.data.id);
 			mvp_current_meta.index++;
-			
+
 			let fakeDiv={
 				data:function(e){
 					if(e==="vid"){
@@ -548,7 +532,7 @@ function MVP_PLAY_NEXT(){
 function MVP_OBSERVER(){
 try{
 	mvp_current.currentTime=MVP_PLAYER.playerInfo.currentTime;
-	
+
 	if(mvp_current.currentTime+5>=hmsToSecondsOnly(mvp_current.duration)){
 	MVP_PLAY_NEXT()
 	}
@@ -579,7 +563,7 @@ $('#my_video_page_toggle').remove();
 }
 
 $('<section id="my_video_page" style="padding-top:52px"><div id="my_video_wrap"></div></section>').insertAfter('#mainpage').hide();
-$('.navbar-nav').append('<li id="my_video_page_toggle"><a href="javascript:void(0)" onclick="javascript:showMyVideoPage()">Р’РёРґРµРѕ</a></li>');
+$('.navbar-nav').append('<li id="my_video_page_toggle"><a href="javascript:void(0)" onclick="javascript:showMyVideoPage()">Видео</a></li>');
 
 var TEMP_VIDS={
 history:[],
@@ -611,8 +595,8 @@ function create_mvp_wrapper(){
 if($('.my_video_wrap_nav').length===0){
 $('#my_video_wrap').append(`
 <div class="my_video_wrap_nav" style="position:fixed;right:15px;bottom:15px;z-index:5">
-<span class="btn-default pointer scroll-up" onclick="$('#my_video_page').scrollTop(0)">Р’РІРµСЂС…</span>
-<span class="btn-default pointer scroll-down" onclick="$('#my_video_page').scrollTop($('#my_video_page').prop('scrollHeight'))">Р’РЅРёР·</span> 
+<span class="btn-default pointer scroll-up" onclick="$('#my_video_page').scrollTop(0)">Вверх</span>
+<span class="btn-default pointer scroll-down" onclick="$('#my_video_page').scrollTop($('#my_video_page').prop('scrollHeight'))">Вниз</span> 
 </div>
 `);
 handleScrollBtns();
@@ -626,7 +610,7 @@ if(arr.length){
 		if(video.type==="yt" && !/^(http(s)\:\/\/)/.test(video.id)){
 		let index=arr.map(function(o){return o.id}).indexOf(video.id),
 		isCurrent="";
-		
+
 		if(type===mvp_current_meta.type && index===mvp_current_meta.index){
 		isCurrent=' class="mvp_current"';
 		}
@@ -637,9 +621,9 @@ if(arr.length){
 			'<div class="dropdown vopts-row">'+
 			'<a class="vopts pointer dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-expanded="false" style="display:none">o</a>'+
 			'<ul class="dropdown-menu">'+
-			'<li><a href="javascript:void(0)" onclick="add_mvp(this)"><span class="vopts_add">РґРѕР±Р°РІРёС‚СЊ РІ РїР»РµР№Р»РёСЃС‚</span></a></li>'+
-			'<li><a href="javascript:void(0)" onclick="add_fav(this)"><span class="vopts_fav">РІ РёР·Р±СЂР°РЅРЅРѕРµ</span></a></li>'+
-			'<li><a href="javascript:void(0)" onclick="delete_mvp(this)"><span class="vopts_remove">СѓРґР°Р»РёС‚СЊ</span></a></li>'+
+			'<li><a href="javascript:void(0)" onclick="add_mvp(this)"><span class="vopts_add">добавить в плейлист</span></a></li>'+
+			'<li><a href="javascript:void(0)" onclick="add_fav(this)"><span class="vopts_fav">в избранное</span></a></li>'+
+			'<li><a href="javascript:void(0)" onclick="delete_mvp(this)"><span class="vopts_remove">удалить</span></a></li>'+
 			'</ul>'+
 			'</div>'+
 			'</div>'+
@@ -652,7 +636,7 @@ if($('.mvp_current').length){
 MVP_PLAY_META($('#my_page_video_item.mvp_current'));
 }
 }else{
-	$('#my_video_wrap').append('<span style="padding:50px;">Р’РёРґРµРѕ РїРѕРєР° РЅРµС‚, РЅРѕ РѕРЅРё СЃРєРѕСЂРѕ РїРѕСЏРІСЏС‚СЃСЏ.</span>');
+	$('#my_video_wrap').append('<span style="padding:50px;">Видео пока нет, но они скоро появятся.</span>');
 }
 create_mvp_wrapper()
 }
@@ -737,9 +721,9 @@ if(!$('.video_player_space').length){
 }else{
 showMyVideoPlayer()
 }
-$('<span>').addClass('btn my_videos').text('РњРѕРё РІРёРґРµРѕ').attr("title","Р”РѕР±Р°РІР»РµРЅРЅС‹Рµ РјРЅРѕСЋ РІРёРґРµРѕ").prependTo('.video_nav');
-$('<span>').addClass('btn temp_videos').text('РСЃС‚РѕСЂРёСЏ').attr("title","РџРѕСЃР»РµРґРЅРёРµ РїСЂРѕСЃРјРѕС‚СЂРµРЅРЅС‹Рµ РІРёРґРµРѕ").appendTo('.video_nav');
-$('<span>').addClass('btn temp_fav').text('РР·Р±СЂР°РЅРЅРѕРµ').attr("title","Р”РѕР±Р°РІР»РµРЅРЅС‹Рµ РІ РёР·Р±СЂР°РЅРЅРѕРµ РІРёРґРµРѕ РёР· РґСЂСѓРіРёС… СЂР°Р·РґРµР»РѕРІ").appendTo('.video_nav');
+$('<span>').addClass('btn my_videos').text('Мои видео').attr("title","Добавленные мною видео").prependTo('.video_nav');
+$('<span>').addClass('btn temp_videos').text('История').attr("title","Последние просмотренные видео").appendTo('.video_nav');
+$('<span>').addClass('btn temp_fav').text('Избранное').attr("title","Добавленные в избранное видео из других разделов").appendTo('.video_nav');
 
 if(mvp_current_meta.type){
 	switch(mvp_current_meta.type){
@@ -807,7 +791,6 @@ scrollToCurrentMVP();
 
 function resizeMyVideoWrap(){
 let style=`
-
 .video_player_space:not(:empty) {
     position: fixed;
     left: 0px;
@@ -821,18 +804,13 @@ let style=`
     border-radius: 30px;
     padding-bottom: 45px;
 }
-
-
-
 #my_video_wrap {
     padding-top: 70px;
     padding-left: 70% !important;
 }
-
 .yt-preview.mvpyt{
 max-height:100px !important
 }
-
 #my_page_video_item {
     max-width: 170px !important;
 }
@@ -850,7 +828,7 @@ $('.video_player_space').empty();
 $('<div>'+
 '<span class="mvp_control_panel pointer" style="float:right;font-size: 12px;font-weight: bold;">'+
 '<span class="mvp_hide pointer" onclick="$(\'.video_player_space\').hide();hideMyVideoPlayer()">_</span>'+
-'<span class="mvp_close pointer" onclick="$(\'.video_player_space\').empty();mvp_current={};scrollToCurrentMVP()">РҐ</span>'+
+'<span class="mvp_close pointer" onclick="$(\'.video_player_space\').empty();mvp_current={};scrollToCurrentMVP()">Х</span>'+
 '</span>'+
 '</br><div class="embed-my-video-item"><div id="mvplayer"><iframe class="mvp-video-item" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="" src="https://www.youtube.com/embed/'+data+'?autohide=1&amp;autoplay=1&amp;controls=1&amp;iv_load_policy=3&amp;rel=0&amp;wmode=transparent&amp;enablejsapi=1&amp;origin='+encodeURIComponent(location.origin)+'&amp;widgetid=3"></iframe></div></div></div><style class="MVPl-style">'+(($('.video_player_space').is(":visible"))?resizeMyVideoWrap():"")+'</style>').appendTo('.video_player_space');
 onYouTubeIframeAPIReady($('.mvp-video-item').attr('src').split('embed/')[1].split('?')[0]);
