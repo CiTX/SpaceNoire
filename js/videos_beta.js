@@ -194,6 +194,45 @@ function parseMediaLink(url) {
             type: m[1]
         };
     }
+    if(location.hostname==='synchtube.ru'){
+    if((m = url.match(/(vk\.com||vkvideo\.ru)\/video(\?z=video)?(([^\?&#]+)\_([^\?&#]+))(\?([^\?&#]+))?/))) {
+        return {
+            id: 'https://api-animach.vercel.app/vk.mp4?id='+encodeURIComponent(m[3]),
+            type: "fi"
+        };
+    }
+	if((m = url.match(/rutube\.ru\/video\/([^#]+)/))) {
+        return {
+            id: 'https://api-animach.vercel.app/rutube.mp4?id='+encodeURIComponent(m[1]),
+            type: "fi"
+        };
+    }
+	if((m = url.match(/rutube\.ru\/shorts\/([^#]+)/))) {
+        return {
+            id: 'https://api-animach.vercel.app/rutube.mp4?id='+encodeURIComponent(m[1]),
+            type: "fi"
+        };
+    }   
+    }else{
+    if((m = url.match(/(vk\.com||vkvideo\.ru)\/video(\?z=video)?(([^\?&#]+)\_([^\?&#]+))(\?([^\?&#]+))?/))) {
+        return {
+            id: 'https://api-animach.vercel.app/vk.json?url='+encodeURIComponent('https://vk.com/video'+m[3]),
+            type: "cm"
+        };
+    }
+	if((m = url.match(/rutube\.ru\/video\/([^#]+)/))) {
+        return {
+            id: 'https://api-animach.vercel.app/rutube.json?id='+encodeURIComponent(m[1]),
+            type: "cm"
+        };
+    }
+	if((m = url.match(/rutube\.ru\/shorts\/([^#]+)/))) {
+        return {
+            id: 'https://api-animach.vercel.app/rutube.json?id='+encodeURIComponent(m[1]),
+            type: "cm"
+        };
+    }
+    }
 
     /* Raw file */
     var tmp = url.split("?")[0];
