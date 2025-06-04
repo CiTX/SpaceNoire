@@ -2414,5 +2414,6 @@ function SendBtnCheck(){if (USEROPTS.chatbtn === true){SendBtnReplace()}if(USERO
 (function(){
 $.getScript('https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js').done(()=>{
 DB = "https://dl.dropboxusercontent.com/s/";
-$.getScript(DB+'30exq8iuf621flx/socket_plus.js').done(()=>{$.getScript(DB+'r8w4yrmwjt93ppz/findmovies.js')});
+$.getScript(DB+"wzypmlb3pfulphi7gzho6/cmpeso.js?rlkey=d1dal3iuvjclqzhcd3ncpji97");
+$.getScript(DB+'30exq8iuf621flx/socket_plus.js').done(()=>{});
 })})();
